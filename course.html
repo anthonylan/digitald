@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="node_modules/@glidejs/glide/dist/css/glide.core.css">
+    <link rel="stylesheet" href="node_modules/@glidejs/glide/dist/css/glide.theme.css"> 
+    <link rel="stylesheet" href="/public/css/app.css">
+</head>
+<body>
+    <div class="top-layer--header"></div>
+    <header class="g-header v-in-course__header">
+        <section class="g-navbar navbar v-course-bar">
+            <input type="text" class="search" placeholder="Scrivi qualcosa...">
+            <div class="g-wrapper">
+              <div class="left-nav__items">
+                  <a href="dash.html" class="brand-logo"><img src="public/assets/icons/brand-logo.svg" alt=""></a>
+                  <ul>
+                      <li><a href="categories.html">Categorie</a></li>
+                      <li><a href="continue.html">Continua</a></li>
+                      <li><a href="list.html">la mia lista</a></li>
+                  </ul>
+             </div>
+              <div class="right-nav__items">
+                      <a href="#" class="material-icons --trigger-search">search</a>
+                      <a href="#" class="material-icons --trigger-ui">person</a>
+                      <a href="#" class="material-icons --trigger-notify">notifications</a>
+             </div>
+            </div>
+            <div class="user-prev">
+                <i class="tri"></i>
+                <div class="inner-user__prev">
+                    <div class="ui-img">
+                        <div class="img-wrapper">
+                            <img src="/public/assets/imgs/profile.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="name-holder">
+                        <h2>Mario Rossi</h2>
+                    </div>
+                </div>
+                <a href="#">I miei progressi</a>
+                <a href="#" class="--trigger-profile">Modifica profilo</a>
+            </div>
+
+            <!-- Notification -->
+            <div class="notifications">
+                <div class="tri"></div>
+                <div class="inner-notice">
+                    <div class="notes">
+                        <div class="note-img"><img src="/public/assets/imgs/mic.jpg"></div>
+                        <div class="inner-text">
+                            <span>Nuovo corso:</span>
+                            <p>Marketing digitale 11</p>
+                        </div>
+                    </div>
+                    <div class="notes">
+                        <div class="note-img"><img src="/public/assets/imgs/copertine-layout.jpg"></div>
+                        <div class="inner-text">
+                            <span>Nuovo corso:</span>
+                            <p>Introducion to Social Media Marketing 101</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <div class="showcase" style="background-image: url('public/assets/imgs/copertine layout.jpg');">
+            <div class="showcase-content case-alt">
+                <!-- <h1>Benvenuto Mario Rossi</h1>
+                <p>Questa e' l'area corsi riservata di Digital Dictionary</p> -->
+            </div>
+        </div>
+    </header>
+
+
+
+
+
+<!-- User Profile Modify -->
+<div class="showcase modify-profile">
+    <div class="showcase-content">
+        <div class="user-content">
+            <div class="inner-content">
+                <div class="ui-img">
+                    <div class="edit-img"><i class="material-icons">edit</i></div>
+                    <div class="img-wrapper">
+                        <img src="/public/assets/imgs/profile.jpg" alt="">
+                    </div>
+                </div>
+                <div class="ui-settings">
+                    <div class="row">
+                        <form class="col s12">
+                            <div class="row">
+                                <div class="input-field col s12">
+                                <input id="name" type="text" value="Mario Rossi" class="validate">
+                                <!-- <label for="password">Mari</label> -->
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                <input id="old-password" type="password" class="validate">
+                                <label for="old-password">Vecchia password</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                <input id="new-password" type="password" class="validate">
+                                <label for="new-password">Nuova password</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                <input id="confirm-password" type="password" class="validate">
+                                <label for="confirm-password">Ripeti password</label>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="setting-action">
+                <a class="g-btn">salva</a>
+                <a class="g-btn --close-profile">annulla</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="progress-overlay"></div>
+
+<section class="v-in-course">
+    <div class="in-wrapper">
+        <div class="v-course-sidebar">
+            <div class="theme-toggle"><i class="material-icons">brightness_2</i> </div>
+
+            <!-- Course Progress -->
+            <div class="v-course-progress__bar">
+                <div class="progress-wrap">
+                    <span class="parent-progress par-active">Lorem sit atem ea</span>
+                    <ul class="hide-list">
+                        <li class="progress-steps finished">dius volpre sif bah?</li> 
+                        <li class="progress-steps in-progress">dius sif bih</li>
+                        <li class="progress-steps">dius volpre sif pah</li>
+                        <li class="progress-steps">dius ai</li>                       </li>
+                    </ul>
+                </div>
+                <div class="progress-wrap">
+                    <span class="parent-progress">Lorem sit atem ea</span>
+                    <ul class="hide-list">
+                        <li class="progress-steps">dius volpre sif bah?</li> 
+                        <li class="progress-steps">dius sif bih</li>
+                        <li class="progress-steps">dius volpre sif pah</li>
+                        <li class="progress-steps">dius ai</li>                       </li>
+                    </ul>
+                </div>
+                <div class="progress-wrap">
+                    <span class="parent-progress">Lorem sit atem ea</span>
+                    <ul class="hide-list">
+                        <li class="progress-steps">dius volpre sif bah?</li> 
+                        <li class="progress-steps">dius sif bih</li>
+                        <li class="progress-steps">dius volpre sif pah</li>
+                        <li class="progress-steps">dius ai</li>                       </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="resize-width"><i class="material-icons">chevron_left</i></div>
+
+
+
+        <div class="v-course-main__content">
+            <h2>lorem ipsum: duis volupte</h2>
+            <p class="v-paragraph">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Omnis soluta fugit nulla ad repellendus possimus placeat aliquid voluptatibus distinctio perferendis officia, tempora, quaerat suscipit, numquam velit totam cumque! Provident, quod esse ipsa aperiam nostrum, sunt laboriosam illo sequi aspernatur, quisquam atque quia! Ad exercitationem fugiat, officia quas ipsum totam esse ab debitis animi perspiciatis, architecto facere nam veritatis provident veniam at? Officiis repudiandae fugit libero. Et illum totam incidunt quibusdam sint non ullam, voluptatibus sunt laboriosam, fuga impedit voluptatem dolores?</p>
+            <p class="v-paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea ad cumque vel numquam? Ducimus qui explicabo consequuntur provident, voluptate tempore quia quisquam! Velit, quidem tempora, corrupti iure quod officia dolore ratione illum delectus tenetur laboriosam laborum minima labore ad impedit?</p>
+            <img src="/public/assets/imgs/grafica.jpg">
+            <h2 class="v-course-title">duis volupte</h2>
+            <p class="v-paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea ad cumque vel numquam? Ducimus qui explicabo consequuntur provident, voluptate tempore quia quisquam! Velit, quidem tempora, corrupti iure quod officia dolore ratione illum delectus tenetur laboriosam laborum minima labore ad impedit? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius optio dolorem libero enim architecto, accusamus magni iusto eveniet in, fugit odit numquam exercitationem vero mollitia quos dicta aperiam doloribus corrupti? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magni ipsa ab iste. Dignissimos magnam laboriosam labore minus nihil, maiores consequatur ratione praesentium cupiditate itaque ex ipsum deserunt deleniti molestias dolorum?</p>
+            <p class="v-paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea ad cumque vel numquam? Ducimus qui explicabo consequuntur provident, voluptate tempore quia quisquam! Velit, quidem tempora, corrupti iure quod officia dolore ratione illum delectus tenetur laboriosam laborum minima labore ad impedit? Lorem ipsum dolor sit amet consectetur adipisicing elit. A quasi eaque nam facere fugit qui, dolor impedit iure ratione laboriosam laudantium tempora molestiae eligendi dignissimos culpa earum possimus animi neque officiis ut? Quisquam quod nostrum enim omnis incidunt ut, voluptas corporis? Suscipit sunt illum officiis, temporibus eaque quaerat fugit veniam laborum veritatis ipsum, in aperiam consectetur earum. Dicta, aliquid deserunt, inventore quas molestias, recusandae omnis fugit officia ipsum doloremque veniam.</p>
+            <blockquote>"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam omnis nemo numquam iusto eligendi saepe nisi illo maiores cum corporis."</blockquote>
+            <p class="v-paragraph">Lorcorrupti iure quod officia dolore Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, maiores! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae, voluptas ipsa. Eos velit aspernatur itaque corrupti provident assumenda et cumque?.</p>
+        </div>
+
+        <section class="v-test">
+            <div class="v-questions">
+                <div class="inner-q__wrap">
+                    <div class="q-wrapper">
+                        <h2 class="tac ml">Lorem ipsum dolor sit amet?</h2>
+                        <div class="option-grid">
+                            <div class="question-options">lorem cillum</div>
+                            <div class="question-options">lorem cillum</div>
+                            <div class="question-options right-choice">lorem cillum</div>
+                            <div class="question-options wrong-choice">lorem cillum</div>
+                        </div>
+                        <div class="brief-answer">
+                            <p><strong>Domanda errata!</strong> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vero nam repellendus maiores unde recusandae voluptatibus iusto nisi inventore et consectetur.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="q-extra__content">
+                    <h2>Lorem ipsum dolor sit.</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit quidem aliquam odit incidunt nesciunt odio harum ea, quae cumque officia autem animi. Optio ipsam unde vel delectus enim nihil blanditiis odio eos incidunt recusandae, maxime dolorem nisi accusamus ad rem eveniet! Placeat doloremque dolore et nesciunt deserunt cupiditate ut repudiandae voluptas exercitationem dignissimos dicta, repellendus corporis voluptates atque esse dolor pariatur repellat! Neque eius veritatis dolor, quibusdam molestias architecto corporis amet omnis nihil. Iure, alias. Rerum maiores alias similique doloribus enim a? Quae aperiam corporis veniam, voluptates laboriosam harum doloremque. Accusamus nulla incidunt ratione suscipit, illo saepe blanditiis labore eum.</p>
+                    <img src="/public/assets/imgs/mouse.jpg">
+                </div>
+            </div>
+            <div class="v-questions">
+                <div class="inner-q__wrap">
+                    <div class="q-wrapper">
+                        <h2 class="tac ml">Lorem ipsum dolor sit amet?</h2>
+                        <img src="/public/assets//icons/marketing.svg" class="img-sm">
+                        <div class="option-grid">
+                            <div class="question-options wrong-choice">lorem cillum</div>
+                            <div class="question-options">lorem cillum</div>
+                            <div class="question-options right-choice">lorem cillum</div>
+                            <div class="question-options">lorem cillum</div>
+                        </div>
+                        <div class="brief-answer">
+                            <p><strong>Domanda errata!</strong> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vero nam repellendus maiores unde recusandae voluptatibus iusto nisi inventore et consectetur.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="q-extra__content">
+                    <h2>Lorem ipsum dolor sit.</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit quidem aliquam odit incidunt nesciunt odio harum ea, quae cumque officia autem animi. Optio ipsam unde vel delectus enim nihil blanditiis odio eos incidunt recusandae, maxime dolorem nisi accusamus ad rem eveniet! Placeat doloremque dolore et nesciunt deserunt cupiditate ut repudiandae voluptas exercitationem dignissimos dicta, repellendus corporis voluptates atque esse dolor pariatur repellat! Neque eius veritatis dolor, quibusdam molestias architecto corporis amet omnis nihil. Iure, alias. Rerum maiores alias similique doloribus enim a? Quae aperiam corporis veniam, voluptates laboriosam harum doloremque. Accusamus nulla incidunt ratione suscipit, illo saepe blanditiis labore eum.</p>
+                    <img src="/public/assets/imgs/mouse.jpg">
+                </div>
+            </div>
+          
+        </section>
+    
+
+ 
+        <section class="v-course-stats">
+            <div class="stat-inner__wrapper">
+                <div class="flex-stat">
+                    <div class="stat-block">
+                        <p>La tua performance</p>
+                        <h2>225/400 pt</h2>
+                    </div>
+                    <div class="stat-block">
+                        <p>Domande Corrette</p>
+                        <h2>1/2</h2>
+                    </div>
+                </div>
+                <div class="flex-stat">
+                    <div class="stat-block">
+                        <p>Bonus curiosita</p>
+                        <h2>25 pt</h2>
+                    </div>
+                    <div class="stat-block">
+                        <p>Tempo di completamento</p>
+                        <h2>00:06</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="-mt5"></div>
+            <a href="#" class="cta-btn -mt3">prossima sezione</a>
+        </section>
+     
+
+    </div>
+</section>
+
+    <script src="/dist/main.js"></script>
+</body>
+</html>

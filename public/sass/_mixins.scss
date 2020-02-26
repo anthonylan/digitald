@@ -1,0 +1,192 @@
+//Global Class
+.g-btn{
+    display: block;
+    width: 130px;
+    margin: 0 auto;
+    text-align: center;
+    border: 2px solid $brand-color;
+    color: $brand-color;
+    background: transparent;
+    padding: .7rem 1rem;
+    text-transform: uppercase;
+    border-radius: 40px;
+    cursor: pointer;
+    transition: all .3s;
+    font-weight: 600;
+    font-family: $mons;
+    &:hover{
+        background-color: $brand-color;
+        color: #fff;
+    }
+}
+
+//Helper Classes
+.v-course-bar{
+    transform: translateY(-80%);
+    &:hover{
+        transform: translateY(0);
+    }
+}
+.tac{
+    text-align: center;
+}
+
+.disable-cursor{
+    pointer-events: none;
+}
+
+.question-options, .theme-toggle,
+ .notes, .sliders, .resize-width, .parent-progress, .fav-blocks{
+    cursor: pointer;
+}
+
+.-mt3{
+    margin-top: 3%;
+}
+.-mt5{
+    margin-top: 5%;
+}
+
+.hide-list{
+    display: none !important;
+}
+
+.cta-sptr{
+    display: inline-block;
+    margin: 0 .5rem;
+}
+
+.cta-btn{
+    display: inline-block;
+    max-width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    text-transform: uppercase;
+    color: $brand-color;
+    font-weight: 700;
+    font-size: 1.25rem;
+    border: 2px solid $brand-color;
+    padding: .5rem 2rem;
+    border-radius: 50px;
+    transition: all .3s;
+    &:hover{
+        color: #fff;
+        background-color: $brand-color;
+    }
+}
+
+
+
+
+@mixin progressCirclesOnCourses {
+    content: '';
+    position: absolute;
+    left: -6%;
+    top: 5%;
+    border: 3px solid $brand-black;
+    background-color: $brand-gray;
+    width: 14px;
+    height: 14px;
+    border-radius: 100px;
+}
+@mixin progressCirclesOnCoursesParent {
+    font-family: 'Material Icons';
+    font-size: 1.5rem;
+    display: block;
+    content: 'chevron_right';
+    position: absolute;
+    left: -8%;
+    top: -1%;
+    padding-left: .2rem;
+    text-transform: none;
+    height: 30px;
+    width: 30px;
+    background-color: $brand-black;
+    border-radius: 50px;
+    color: $brand-gray;
+}
+
+
+
+@mixin inputReset {
+    input[type="text"], input[type="email"], input[type="password"]{
+        border-bottom: 1px solid #fff; 
+        margin-left: -4%; 
+        color: #e9e9e9;
+        padding-left: 2rem;
+        &:focus{
+            border-bottom: 1px solid $brand-color;
+        }
+    }
+}
+
+
+@mixin userProfileImg {
+    width: 250px;
+    height: 250px;
+    position: relative;
+    border-radius: 50%;
+    overflow: hidden;
+    img{
+        display: inline-block;
+        margin: 0 auto;
+        margin-left: -25%;
+        height: 100%;
+        width: auto;
+    }
+}
+
+@mixin DisplayCell {
+    display: table-cell;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, .5);
+    text-align: center;
+}
+
+
+
+@mixin coloredBtnInline {
+    display: inline-block;
+    padding-top: 0rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+    font-family: $mons;
+}
+@mixin btnWithIcon {
+    display: inline-block;
+    transform: translateY(.5rem);
+    font-size: 2rem;
+}
+
+@mixin sliverButton {
+    text-transform: uppercase;
+    display: inline-block;
+    color: #fff;
+    border: 2px solid #fff;
+    font-size: 1.25rem;
+    border-radius: 50px;
+    padding-top: 0;
+    padding: 0 1.5rem .7rem 1.5rem;
+    margin-left: 1rem;
+    font-weight: 600;
+    font-family: $mons;
+    &:hover{
+        background-color: #fff;
+        color: $brand-black;
+    }
+}
+
+
+@mixin triangleShape {
+    position: absolute;
+    right: 18%;
+    top: -14%;
+    display: block;
+    width: 0;
+    height: 0;
+    border-right: 12px solid transparent;
+    border-left: 12px solid transparent;
+    border-top: 14px solid transparent;
+    border-bottom: 16px solid $brand-black;
+}

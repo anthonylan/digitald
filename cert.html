@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>certification</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+    <link rel="stylesheet" href="/public/css/app.css">
+</head>
+<body>
+    <div class="top-layer--header"></div>
+    <header class="g-header">
+        <section class="g-navbar navbar">
+            <input type="text" class="search" placeholder="Scrivi qualcosa...">
+            <div class="g-wrapper">
+              <div class="left-nav__items">
+                  <a href="dash.html" class="brand-logo"><img src="public/assets/icons/brand-logo.svg" alt=""></a>
+                  <ul>
+                      <li><a href="categories.html">Categorie</a></li>
+                      <li><a href="continue.html">Continua</a></li>
+                      <li><a href="list.html">la mia lista</a></li>
+                  </ul>
+             </div>
+              <div class="right-nav__items">
+                      <a href="#" class="material-icons --trigger-search">search</a>
+                      <a href="#" class="material-icons --trigger-ui">person</a>
+                      <a href="#" class="material-icons --trigger-notify">notifications</a>
+             </div>
+            </div>
+            <div class="user-prev">
+                <i class="tri"></i>
+                <div class="inner-user__prev">
+                    <div class="ui-img">
+                        <div class="img-wrapper">
+                            <img src="/public/assets/imgs/profile.jpg">
+                        </div>
+                    </div>
+                    <div class="name-holder">
+                        <h2>Mario Rossi</h2>
+                    </div>
+                </div>
+                <a href="progress.html">I miei progressi</a>
+                <a href="#" class="--trigger-profile">Modifica profilo</a>
+            </div>
+
+            <!-- Notification -->
+            <div class="notifications">
+                <div class="tri"></div>
+                <div class="inner-notice">
+                    <div class="notes">
+                        <div class="note-img"><img src="/public/assets/imgs/mic.jpg"></div>
+                        <div class="inner-text">
+                            <span>Nuovo corso:</span>
+                            <p>Marketing digitale 11</p>
+                        </div>
+                    </div>
+                    <div class="notes">
+                        <div class="note-img"><img src="/public/assets/imgs/copertine-layout.jpg"></div>
+                        <div class="inner-text">
+                            <span>Nuovo corso:</span>
+                            <p>Introducion to Social Media Marketing 101</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </header>
+
+
+
+    <section class="cert">
+        <div class="inner-cert">
+            <img src="/public/assets/imgs/DD_Certificato.jpg">
+            <div class="cert-action">
+                <div class="-mt5"></div>
+                <a href="#" class="cta-btn">scarica pdf</a>
+                <span class="cta-sptr"></span>
+                <a href="#" class="cta-btn"><i class="fab fa-linkedin-in"></i> aggiungi a linkedin</a>
+                <div class="-mt5"></div>
+                <p>Condividi il tuo certification su:</p>
+                <div class="share-cert-social">
+                    <img src="/public/assets/icons/facebook.svg">
+                    <img src="/public/assets/icons/linkedin.svg">
+                    <img src="/public/assets/icons/twitter.svg">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+<!-- User Profile Modify -->
+<div class="showcase modify-profile">
+    <div class="showcase-content">
+        <div class="user-content">
+            <div class="inner-content">
+                <div class="ui-img">
+                    <div class="edit-img"><i class="material-icons">edit</i></div>
+                    <div class="img-wrapper">
+                        <img src="/public/assets/imgs/profile.jpg" alt="">
+                    </div>
+                </div>
+                <div class="ui-settings">
+                    <div class="row">
+                        <form class="col s12">
+                            <div class="row">
+                                <div class="input-field col s12">
+                                <input id="name" type="text" value="Mario Rossi" class="validate">
+                                <!-- <label for="password">Mari</label> -->
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                <input id="old-password" type="password" class="validate">
+                                <label for="old-password">Vecchia password</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                <input id="new-password" type="password" class="validate">
+                                <label for="new-password">Nuova password</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                <input id="confirm-password" type="password" class="validate">
+                                <label for="confirm-password">Ripeti password</label>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="setting-action">
+                <a class="g-btn">salva</a>
+                <a class="g-btn --close-profile">annulla</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<footer class="main-footer">
+    <div class="inner-footer">
+        <div class="bottom-brand">
+            <img src="/public/assets/icons/logo.svg">
+        </div>
+        <div class="iva">
+        </div>
+    </div>
+</footer>
+
+    <script src="/dist/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="public/css/app.css">
+</head>
+<body>
+    
+
+    <header class="v-header">
+        <div class="fullscreen-video">
+            <video class="autoplay" controls autoplay="true" loop="true" muted>
+                <source src="public/assets/videos/web.mp4">
+            </video>
+        </div>
+        <div class="v-overlay"></div>
+        <div class="contents">
+            <div class="contents-wrapper">
+              <div class="logo-section"> <img src="public/assets/icons/brand-logo.svg"> </div>
+    
+            <div class="v-form">
+                <h3>Benvenuto in <span>Digital Dictionary</span></h3>
+                 <div class="row">
+                    <form class="col s12">
+                     <div class="row">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">person</i>
+                            <input id="icon_prefix" type="text" class="validate">
+                            <label for="icon_prefix">Email</label>
+                        </div>
+                        </div>
+                        <div class="row nm">
+                            <div class="input-field col s12">
+                            <i class="material-icons prefix">lock</i>
+                            <input id="icon_lock" type="text" class="validate">
+                            <label for="icon_lock">Password</label>
+                            </div>
+                        </div>
+                        <div class="row bottom-form">
+                            <div class="col s6"> 
+                                <label>
+                                    <input type="checkbox" />
+                                    <span>Riccordami</span>
+                                </label>
+                            </div>
+                            <div class="col s6"> <a href="#" class="forget-password">Hai dimenticato la password?</a> </div>
+                        </div>
+                        <button type="submit" class="v-access g-btn">accedi</button>
+                    </form>
+               </div>
+             </div>
+            </div>
+          
+        </div>
+    </header>
+
+    <script src="/dist/main.js"></script>
+</body>
+</html>
