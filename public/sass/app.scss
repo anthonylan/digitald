@@ -1,12 +1,6 @@
 @import '_vars';
 @import '_mixins';
 
-@import url('/node_modules/@glidejs/glide/dist/css/glide.core.min.css');
-
-// Optional Theme Stylesheet
-@import url('/node_modules/@glidejs/glide/dist/css/glide.theme.min.css');
-
-
 @import '../css/materialize.css';
 @import url('https://fonts.googleapis.com/css?family=Palanquin:300,400,500,700&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,600,700&display=swap');

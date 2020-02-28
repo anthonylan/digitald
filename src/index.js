@@ -7,6 +7,7 @@ import { TweenMax, Expo } from 'gsap'
 
 
 
+
 //========= GLOBAL VARIABLES====//
 const slider  = document.querySelectorAll('.sliders')
 const slideContainer = document.querySelectorAll('.v-courses')
