@@ -540,7 +540,7 @@ if (document.querySelector('.v-access')) {
   document.querySelector('.v-access').addEventListener('click', (e) => {
     e.preventDefault()
     location.href = '/dash.html'  
-    console.log('..');
+    console.log('...');
     
   })
 }
