@@ -1,5 +1,5 @@
 import Glide from '@glidejs/glide' //TO BE USED LATER
-import { Controls } from '@glidejs/glide/dist/glide.modular.esm.js'
+import { Controls, Breakpoints } from '@glidejs/glide/dist/glide.modular.esm.js'
 import 'materialize-css/dist/js/materialize.min.js'
 import { TweenMax, Expo } from 'gsap'
 
@@ -9,8 +9,8 @@ import { TweenMax, Expo } from 'gsap'
 
 //========= GLOBAL VARIABLES====//
 const slider  = document.querySelectorAll('.sliders')
-const slideContainer = document.querySelector('.v-slider')
-const briefLayout = document.querySelector('.v-course-brief')
+const slideContainer = document.querySelectorAll('.v-courses')
+//const briefLayout = document.querySelectorAll('.v-course-brief')
 const searchBar = document.querySelector('.search')
 const notificationsBar = document.querySelector('.notifications')
 const triggerNotify =  document.querySelector('.--trigger-notify')
@@ -24,85 +24,128 @@ const iva = document.querySelector('.main-footer .iva')
 
 
 
+//====== Glide Continue ====//
+var glide = new Glide('.glide-continue', {
+  type: 'carousel',
+  perView: 4,
+  focusAt: 'center',
+  breakpoints: {
+    800: {
+      perView: 2
+    },
+    480: {
+      perView: 1
+    }
+  }
+})
 
+glide.mount()
+
+//Glide New
+var newC = new Glide('#new', {
+  type: 'carousel',
+  perView: 5,
+  focusAt: 'center',
+  breakpoints: {
+    800: {
+      perView: 3
+    },
+    480: {
+      perView: 1
+    }
+  }
+})
+newC.mount()
+
+//Glide Trending
+var trend = new Glide('#trending', {
+  type: 'carousel',
+  perView: 5,
+  focusAt: 'center',
+  breakpoints: {
+    800: {
+      perView: 3
+    },
+    480: {
+      perView: 1
+    }
+  }
+})
+trend.mount()
+
+//Digiatl
+var digial = new Glide('#digital', {
+  type: 'carousel',
+  perView: 5,
+  focusAt: 'center',
+  breakpoints: {
+    800: {
+      perView: 3
+    },
+    480: {
+      perView: 1
+    }
+  }
+})
+digial.mount()
 
 //=======Set Animations and Transitions on Mouse Hover
-if(slideContainer){
-  slider.forEach((slide) => {
-    //Transform Contents - Show
-    slide.addEventListener('mouseenter', () => {
-      slide.querySelector('.top-layer').style.display = 'none'
-      slide.querySelector('.bottom-layer').style.display = 'table-cell'
-      slide.classList.add('sliders-margin')
-      slide.style.transform = 'scale(1.4)'
-      //Space Element on Hover
-      if(slide.nextElementSibling){
-        slide.nextElementSibling.style.marginLeft = '5.5rem'
-      }  
-      
-      if(slide.previousElementSibling){
-        slide.previousElementSibling.style.marginLeft = '3.5rem'
-        slide.previousElementSibling.style.transform = 'translateX(-3rem)'
-        slide.previousElementSibling.style.marginRight = '2.5rem'
-      }
-      
-    })
-  //Transform
-    slide.addEventListener('mouseleave', () => {
-      slide.querySelector('.top-layer').style.display = 'table-cell'
-      slide.querySelector('.bottom-layer').style.display = 'none'
-      slide.classList.remove('sliders-margin')
-     slide.style.transform = ''
-  
-      //Unspace Element on MouseLeave
-      if(slide.nextElementSibling){
-        slide.nextElementSibling.style.marginLeft = ''
-      }  
-    
-      if(slide.previousElementSibling){
-        slide.previousElementSibling.style.marginLeft = ''
-        slide.previousElementSibling.style.marginRight = ''
-        slide.previousElementSibling.style.transform = 'translateX(0)'
-      }
-    })
-  
-  })
-
-  //===========Reset if hovered on the last child of Slider
-  const lastSlide = document.querySelector('.sliders:last-child')
-  lastSlide.addEventListener('mouseenter', () => {
-    TweenMax.to(slideContainer, .5, {marginRight: 'auto'})
-  })
-  lastSlide.addEventListener('mouseleave', () => {
-    TweenMax.to(slideContainer, .5, {marginRight: ''})
-  })
 
 
 
-  //============Listen for Click on Arrow Down an Show Course Preview | Add class
-document.querySelectorAll('.show-dictionary__prev').forEach((closeBrief) => {
-  closeBrief.addEventListener('click', () => {
-    briefLayout.classList.add('brief-active')
-    TweenMax.from(briefLayout, 1, {opacity: 0})
-    slider.forEach((slide) => {
-      slide.classList.remove('slider-active')
-      slide.style.transform = ''
+
+
+const newCourses = document.querySelector('#new')
+const trendingCourses = document.querySelector('#trending')
+const digitalCourses = document.querySelector('#digital')
+
+
+
+//New Courses
+ newCourses.querySelectorAll('.show-dictionary__prev').forEach((open) => {
+   open.addEventListener('click', (e) => {
+     open.closest('.sliders').classList.add('slider-active')
+     document.querySelector('.new-brief').classList.add('brief-active')
+     //Deactivate
+     newCourses.style.pointerEvents = 'none'
+   })
+ })
+//Trending Courses
+trendingCourses.querySelectorAll('.show-dictionary__prev').forEach((open) => {
+  open.addEventListener('click', (e) => {
+    open.closest('.sliders').classList.add('slider-active')
+    document.querySelector('.trending-brief').classList.add('brief-active')
+    //Deactivate
+    trendingCourses.style.pointerEvents = 'none'
   })
-    closeBrief.closest('.sliders').classList.add('slider-active')
+})
+//Digital Courses
+digitalCourses.querySelectorAll('.show-dictionary__prev').forEach((open) => {
+  open.addEventListener('click', (e) => {
+    open.closest('.sliders').classList.add('slider-active')
+    document.querySelector('.digital-brief').classList.add('brief-active')
+    //Deactivate
+    digitalCourses.style.pointerEvents = 'none'
   })
 })
 
 
-//==========Close Course Preview
-document.querySelector('.--close-course-preview').addEventListener('click', (e) => {
-  e.preventDefault()
-  briefLayout.classList.remove('brief-active')
+ 
+ 
 
-  slider.forEach((slide) => {
-      slide.classList.remove('slider-active')
+//Close Brief
+document.querySelectorAll('.--close-course-preview').forEach((closeBrief) => {
+  closeBrief.addEventListener('click', (e) => {
+    e.preventDefault()
+     document.querySelector('.slider-active').classList.remove('slider-active')
+    document.querySelectorAll('.new-brief, .trending-brief, .digital-brief').forEach((el) => {
+      el.classList.remove('brief-active')
+    })
+    newCourses.style.pointerEvents = ''
+    trendingCourses.style.pointerEvents = ''
+    digitalCourses.style.pointerEvents = ''
   })
 })
-
 
 
 //========Add to List Listener / Change Icon on click
@@ -123,51 +166,14 @@ document.querySelectorAll('.ui-action-icons i:first-child').forEach((addTLicon) 
 })
 
 
-  //Move Sliders
-  let rightButton = document.querySelector('#n-c .right');
-  rightButton.onclick = function () {
-      let container = document.querySelector('#new');
-      sideScroll(container,'right',2,300,10);
-  };
-  
-  let back = document.querySelector('#n-c .left');
-  back.onclick = function () {
-      let container = document.querySelector('#new');
-      sideScroll(container,'left',2,300,10);
-  };
 
 
-//Trending
-let tRightButton = document.querySelector('#t-c .right');
-  tRightButton.onclick = function () {
-      let container = document.querySelector('#trending');
-      sideScroll(container,'right',2,300,10);
-  };
-  
-  var tBack = document.querySelector('#t-c .left');
-  tBack.onclick = function () {
-      let container = document.querySelector('#trending');
-      sideScroll(container,'left',2,300,10);
-  };
 
 
-  function sideScroll(element,direction,speed,distance,step){
-      var scrollAmount = 0;
-      var slideTimer = setInterval(function(){
-          if(direction == 'left'){
-              element.scrollLeft -= step;
-          } else {
-              element.scrollLeft += step;
-          }
-          scrollAmount += step;
-          if(scrollAmount >= distance){
-              window.clearInterval(slideTimer);
-          }
-      }, speed);
-  }
 
 
-}
+
+
 
 //============Change Nav Background Color on Scroll
   const globalNav = document.querySelector('.--trigger-nav')
@@ -250,9 +256,69 @@ if (triggerNotify) {
   })
 }
  
+if (document.querySelector('.ff')) {
+  document.innerHTML = `<div class="v-course-brief">
+ <a href="#" class="--close-course-preview"><i class="material-icons">close</i></a>
+ <div class="brief-container">
+     <div class="brief-contents">
+         <h1>Digital Marketing</h1>
+         <p class="brief-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate,sit amet consecteture, ipsum.</p>
+         <div class="brief-details">
+             <ul>
+                 <li>Capitoli</li>
+                 <li>Tempo totale</li>
+                 <li>Punti totoli</li>
+             </ul>
+             <ul>
+                 <li>0/5</li>
+                 <li>02:50</li>
+                 <li>500 pt</li>
+             </ul>
+         </div>
+         <div class="bottom-action-buttons">
+             <a href="#" class="start-now g-btn"><i class="material-icons">play_arrow</i>inizia</a>
+             <a href="#" class="add-to-list"><i class="material-icons">add</i>la mia lista</a>
+         </div>
+     </div>
+     <div class="brief-bg" style="background-image: url('/public/assets/imgs/copertine layout.jpg');">
+         <div class="brief-bg__inner">
 
-  //Set Carousel Track
+         </div>
+     </div>
+ </div>
+ <div class="v-course-steps">
+     <div class="step-line"></div>
+     <div class="steps-wrapper">
+         <div class="steps">
+             <div class="circle-pass is-on"></div>
+             <h3>intro to Marketing 101</h3>
+             <p>Tempo: <span>16 min</span></p>
+             <p>Bonus: <span>+25 pt</span> -3 gg</p>
+         </div>
+         <div class="steps">
+             <div class="circle-pass"></div>
+             <h3>intro to Marketing 101</h3>
+             <p>Tempo: <span>16 min</span></p>
+             <p>Bonus: <span>+25 pt</span> -3 gg</p>
+         </div>
+         <div class="steps">
+             <div class="circle-pass"></div>
+             <h3>intro to Marketing 101</h3>
+             <p>Tempo: <span>16 min</span></p>
+             <p>Bonus: <span>+25 pt</span> -3 gg</p>
+         </div>
+         <div class="steps">
+             <div class="circle-pass"></div>
+             <h3>intro to Marketing 101</h3>
+             <p>Tempo: <span>16 min</span></p>
+             <p>Bonus: <span>+25 pt</span> -3 gg</p>
+         </div>
+     </div>
+ </div>
+</div>`
+}
 
+ 
 
 
 
@@ -538,6 +604,18 @@ if (document.querySelector('.v-access')) {
     
   })
 }
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  if (document.querySelector('.showcase')) {
+    TweenMax.from('.showcase', 2, { scale: 3, ease: Expo.easeInOut, backgroundPositionY: 'bottom', delay: 1 })
+    TweenMax.from('.showcase-content h1', .5, { opacity: 0, x: -20, delay: 3 })
+    TweenMax.from('.showcase-content p', .5, {opacity: 0, x: -20, delay: 3})
+
+  }
+})
+
 
 
   
