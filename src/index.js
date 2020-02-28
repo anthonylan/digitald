@@ -92,78 +92,81 @@ digial.mount()
 //=======Set Animations and Transitions on Mouse Hover
 
 
+if(document.querySelector('main')){
 
 
-
-const newCourses = document.querySelector('#new')
-const trendingCourses = document.querySelector('#trending')
-const digitalCourses = document.querySelector('#digital')
-
-
-
-//New Courses
- newCourses.querySelectorAll('.show-dictionary__prev').forEach((open) => {
-   open.addEventListener('click', (e) => {
-     open.closest('.sliders').classList.add('slider-active')
-     document.querySelector('.new-brief').classList.add('brief-active')
-     //Deactivate
-     newCourses.style.pointerEvents = 'none'
+  const newCourses = document.querySelector('#new')
+  const trendingCourses = document.querySelector('#trending')
+  const digitalCourses = document.querySelector('#digital')
+  
+  
+  
+  //New Courses
+   newCourses.querySelectorAll('.show-dictionary__prev').forEach((open) => {
+     open.addEventListener('click', (e) => {
+       open.closest('.sliders').classList.add('slider-active')
+       document.querySelector('.new-brief').classList.add('brief-active')
+       //Deactivate
+       newCourses.style.pointerEvents = 'none'
+     })
    })
- })
-//Trending Courses
-trendingCourses.querySelectorAll('.show-dictionary__prev').forEach((open) => {
-  open.addEventListener('click', (e) => {
-    open.closest('.sliders').classList.add('slider-active')
-    document.querySelector('.trending-brief').classList.add('brief-active')
-    //Deactivate
-    trendingCourses.style.pointerEvents = 'none'
-  })
-})
-//Digital Courses
-digitalCourses.querySelectorAll('.show-dictionary__prev').forEach((open) => {
-  open.addEventListener('click', (e) => {
-    open.closest('.sliders').classList.add('slider-active')
-    document.querySelector('.digital-brief').classList.add('brief-active')
-    //Deactivate
-    digitalCourses.style.pointerEvents = 'none'
-  })
-})
-
-
- 
- 
-
-//Close Brief
-document.querySelectorAll('.--close-course-preview').forEach((closeBrief) => {
-  closeBrief.addEventListener('click', (e) => {
-    e.preventDefault()
-     document.querySelector('.slider-active').classList.remove('slider-active')
-    document.querySelectorAll('.new-brief, .trending-brief, .digital-brief').forEach((el) => {
-      el.classList.remove('brief-active')
+  //Trending Courses
+  trendingCourses.querySelectorAll('.show-dictionary__prev').forEach((open) => {
+    open.addEventListener('click', (e) => {
+      open.closest('.sliders').classList.add('slider-active')
+      document.querySelector('.trending-brief').classList.add('brief-active')
+      //Deactivate
+      trendingCourses.style.pointerEvents = 'none'
     })
-    newCourses.style.pointerEvents = ''
-    trendingCourses.style.pointerEvents = ''
-    digitalCourses.style.pointerEvents = ''
   })
-})
-
-
-//========Add to List Listener / Change Icon on click
-
-document.querySelectorAll('.ui-action-icons i:first-child').forEach((addTLicon) => {
-  addTLicon.addEventListener('click', (e) => {
-
-    let icon = e.target
-    if(icon.innerHTML == 'add'){
-      icon.textContent = 'check'
-    } else {
-      icon.textContent = 'add'
-    }
-    
-    triggerNotify.classList.add('scale-notify')
-    setTimeout(() => {  triggerNotify.classList.remove('scale-notify') }, 500)
+  //Digital Courses
+  digitalCourses.querySelectorAll('.show-dictionary__prev').forEach((open) => {
+    open.addEventListener('click', (e) => {
+      open.closest('.sliders').classList.add('slider-active')
+      document.querySelector('.digital-brief').classList.add('brief-active')
+      //Deactivate
+      digitalCourses.style.pointerEvents = 'none'
+    })
   })
-})
+  
+  
+   
+   
+  
+  //Close Brief
+  document.querySelectorAll('.--close-course-preview').forEach((closeBrief) => {
+    closeBrief.addEventListener('click', (e) => {
+      e.preventDefault()
+       document.querySelector('.slider-active').classList.remove('slider-active')
+      document.querySelectorAll('.new-brief, .trending-brief, .digital-brief').forEach((el) => {
+        el.classList.remove('brief-active')
+      })
+      newCourses.style.pointerEvents = ''
+      trendingCourses.style.pointerEvents = ''
+      digitalCourses.style.pointerEvents = ''
+    })
+  })
+  
+  
+  //========Add to List Listener / Change Icon on click
+  
+  document.querySelectorAll('.ui-action-icons i:first-child').forEach((addTLicon) => {
+    addTLicon.addEventListener('click', (e) => {
+  
+      let icon = e.target
+      if(icon.innerHTML == 'add'){
+        icon.textContent = 'check'
+      } else {
+        icon.textContent = 'add'
+      }
+      
+      triggerNotify.classList.add('scale-notify')
+      setTimeout(() => {  triggerNotify.classList.remove('scale-notify') }, 500)
+    })
+  })
+  
+}
+
 
 
 
@@ -256,67 +259,7 @@ if (triggerNotify) {
   })
 }
  
-if (document.querySelector('.ff')) {
-  document.innerHTML = `<div class="v-course-brief">
- <a href="#" class="--close-course-preview"><i class="material-icons">close</i></a>
- <div class="brief-container">
-     <div class="brief-contents">
-         <h1>Digital Marketing</h1>
-         <p class="brief-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate,sit amet consecteture, ipsum.</p>
-         <div class="brief-details">
-             <ul>
-                 <li>Capitoli</li>
-                 <li>Tempo totale</li>
-                 <li>Punti totoli</li>
-             </ul>
-             <ul>
-                 <li>0/5</li>
-                 <li>02:50</li>
-                 <li>500 pt</li>
-             </ul>
-         </div>
-         <div class="bottom-action-buttons">
-             <a href="#" class="start-now g-btn"><i class="material-icons">play_arrow</i>inizia</a>
-             <a href="#" class="add-to-list"><i class="material-icons">add</i>la mia lista</a>
-         </div>
-     </div>
-     <div class="brief-bg" style="background-image: url('/public/assets/imgs/copertine layout.jpg');">
-         <div class="brief-bg__inner">
 
-         </div>
-     </div>
- </div>
- <div class="v-course-steps">
-     <div class="step-line"></div>
-     <div class="steps-wrapper">
-         <div class="steps">
-             <div class="circle-pass is-on"></div>
-             <h3>intro to Marketing 101</h3>
-             <p>Tempo: <span>16 min</span></p>
-             <p>Bonus: <span>+25 pt</span> -3 gg</p>
-         </div>
-         <div class="steps">
-             <div class="circle-pass"></div>
-             <h3>intro to Marketing 101</h3>
-             <p>Tempo: <span>16 min</span></p>
-             <p>Bonus: <span>+25 pt</span> -3 gg</p>
-         </div>
-         <div class="steps">
-             <div class="circle-pass"></div>
-             <h3>intro to Marketing 101</h3>
-             <p>Tempo: <span>16 min</span></p>
-             <p>Bonus: <span>+25 pt</span> -3 gg</p>
-         </div>
-         <div class="steps">
-             <div class="circle-pass"></div>
-             <h3>intro to Marketing 101</h3>
-             <p>Tempo: <span>16 min</span></p>
-             <p>Bonus: <span>+25 pt</span> -3 gg</p>
-         </div>
-     </div>
- </div>
-</div>`
-}
 
  
 
@@ -529,10 +472,7 @@ if (document.querySelector('.next-slide')) {
       var elems = document.querySelectorAll('.carousel');
       var instances = M.Carousel.init(elems);
    
-  
       const activeCarousel = document.querySelector('.carousel .active')
-  
-    
   
   
       document.querySelector('.prev-slide').addEventListener('click', () => {
@@ -595,7 +535,7 @@ if (document.querySelector('.next-slide')) {
   
 
 
-    //Temp
+    //Temporary
 if (document.querySelector('.v-access')) {
   document.querySelector('.v-access').addEventListener('click', (e) => {
     e.preventDefault()
