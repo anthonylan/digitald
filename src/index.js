@@ -25,6 +25,13 @@ const iva = document.querySelector('.main-footer .iva')
 
 
 
+
+//=======Set Animations and Transitions on Mouse Hover
+
+
+if (document.querySelector('main')) {
+  
+  
 //====== Glide Continue ====//
 var glide = new Glide('.glide-continue', {
   type: 'carousel',
@@ -89,11 +96,6 @@ var digial = new Glide('#digital', {
   }
 })
 digial.mount()
-
-//=======Set Animations and Transitions on Mouse Hover
-
-
-if(document.querySelector('main')){
 
 
   const newCourses = document.querySelector('#new')
