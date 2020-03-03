@@ -514,6 +514,9 @@ main{
         }
         .bottom-contents{
             top: -1.2rem;
+            p{
+                font-size: .7rem;
+            }
         }
     }
 
@@ -583,6 +586,9 @@ main{
       @media only screen   
       and (min-device-width : 768px)  { 
           height: 350px !important;
+          .glide__arrow{
+              margin-top: .9rem;
+          }
       }
 }
 
@@ -598,6 +604,12 @@ main{
     }
     .glide__arrow{
         margin-top: 2.4rem;
+    }
+    @media only screen   
+    and (min-device-width : 768px)  { 
+        .glide__arrow{
+            margin-top: 3.4rem;
+        }
     }
 }
 .glide-continue, .glide__track{

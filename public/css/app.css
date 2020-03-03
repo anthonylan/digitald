@@ -548,7 +548,9 @@ main {
       .sliders .slide-content h2 {
         font-size: 1.25rem; }
       .sliders .bottom-contents {
-        top: -1.2rem; } }
+        top: -1.2rem; }
+        .sliders .bottom-contents p {
+          font-size: .7rem; } }
 
 #new, #trending, #digital, #continue {
   height: 450px;
@@ -599,7 +601,9 @@ main {
       background-color: #E4437C; }
   @media only screen and (min-device-width: 768px) {
     #new, #trending, #digital, #continue {
-      height: 350px !important; } }
+      height: 350px !important; }
+      #new .glide__arrow, #trending .glide__arrow, #digital .glide__arrow, #continue .glide__arrow {
+        margin-top: .9rem; } }
 
 #continue {
   width: 90%;
@@ -613,6 +617,9 @@ main {
     width: 90%; }
   #continue .glide__arrow {
     margin-top: 2.4rem; }
+  @media only screen and (min-device-width: 768px) {
+    #continue .glide__arrow {
+      margin-top: 3.4rem; } }
 
 .glide-continue, .glide__track {
   position: relative; }
