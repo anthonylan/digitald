@@ -22,6 +22,8 @@ const reSize = document.querySelector('.resize-width')
 //IVA
 const iva = document.querySelector('.main-footer .iva')
 
+//Body
+const DOM = document.querySelector('body')
 
 
 
@@ -179,15 +181,6 @@ digial.mount()
   })
   
 }
-
-
-
-
-
-
-
-
-
 
 
 
@@ -563,8 +556,6 @@ if (document.querySelector('.next-slide')) {
 
 
 
-  
-
 
     //Temporary
 if (document.querySelector('.v-access')) {
@@ -577,18 +568,43 @@ if (document.querySelector('.v-access')) {
 }
 
 
-
 //Scale Showcase Bg
 document.addEventListener('DOMContentLoaded', () => {
   if (document.querySelector('.showcase')) {
-    TweenMax.from('.showcase', 2, { scale: 3, ease: Expo.easeInOut, backgroundPositionY: 'bottom', delay: 1 })
+    TweenMax.from('.showcase', 2, { scale: 2, ease: Expo.easeOut, backgroundPositionY: 'center', delay: 1 })
     TweenMax.from('.showcase-content h1', .5, { opacity: 0, x: -20, delay: 3 })
     TweenMax.from('.showcase-content p', .5, {opacity: 0, x: -20, delay: 3})
-
   }
 })
 
 
+
+//========Create Space on Sliders Hover ====
+DOM.querySelectorAll('.sliders').forEach((slide) => {
+  slide.addEventListener('mouseenter', () => {
+    let ns = slide.nextElementSibling
+    let ps = slide.previousElementSibling
+
+    if (ps) {
+      ps.classList.add('active-margin')
+    }
+   
+    
+    
+  })
+  //Remove Class
+  slide.addEventListener('mouseleave', () => {
+    let ns = slide.nextElementSibling
+    let ps = slide.previousElementSibling
+
+    if (ps) {
+      ps.classList.remove('active-margin')
+    }
+   
+    
+    
+  })
+})
 
   
 
