@@ -208,12 +208,14 @@ digial.mount()
     triggerUI.addEventListener('click', (e) => {
       e.preventDefault()
       if (UIPrev.classList.contains('cc-class')) {
-        UIPrev.style.display = 'block'
         UIPrev.classList.remove('cc-class') 
       } else {
-        UIPrev.style.display = 'none'
         UIPrev.classList.add('cc-class') 
       }
+     
+
+      DOM.querySelector('.notifications').classList.remove('notify-active')
+      DOM.querySelector('.--trigger-notify').classList.remove('use-tri')
     })
 
 
@@ -263,6 +265,8 @@ if (triggerNotify) {
     notificationsBar.classList.toggle('notify-active')
     that.classList.toggle('use-tri')
     e.preventDefault()
+
+    DOM.querySelector('.user-prev').classList.remove('cc-class')
   })
 }
  

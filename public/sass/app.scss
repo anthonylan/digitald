@@ -426,7 +426,7 @@ main{
             transition: all .3s;
             display: none;
             h2{
-                transform: scale(.8) translateX(-3rem);
+                transform: scale(.8) translateX(-2rem);
 
             }
             p{
@@ -501,6 +501,22 @@ main{
        &:hover .bottom-layer{
         display: table;
     }
+
+    /* For 1024 Resolution */  
+    @media only screen   
+    and (min-device-width : 768px)  { 
+        height: 200px;
+        width: 300px;
+        .slide-content{
+            h2{
+                font-size: 1.25rem;
+            }
+        }
+        .bottom-contents{
+            top: -1.2rem;
+        }
+    }
+
     }
 
 
@@ -526,6 +542,11 @@ main{
                 width: 400px !important;
                 @media (max-width:550px) {
                     width: 500px !important;
+                }
+                  /* For 1024 Resolution */  
+                @media only screen   
+                and (min-device-width : 768px)  { 
+                    width: 310px !important;
                 }
             }
             @media (max-width:550px) {
@@ -558,6 +579,11 @@ main{
             background-color: $brand-color;
         }
     }
+      /* For 1024 Resolution */  
+      @media only screen   
+      and (min-device-width : 768px)  { 
+          height: 350px !important;
+      }
 }
 
 #continue{
@@ -749,6 +775,9 @@ main{
     100%{ transform: scale(1.4); }
 }
 
+.cc-class{
+    display: block !important;
+}
 
 
 
@@ -1027,6 +1056,20 @@ main{
                }
            }
         }
+    }
+
+    @media only screen   
+    and (min-device-width : 768px)  { 
+      .brief-container{
+          h1{
+              font-size: 50px;
+          }
+      }
+      .steps{
+          h3{
+              font-size: 1rem !important;
+          }
+      }
     }
 }
 
