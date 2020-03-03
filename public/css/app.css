@@ -440,8 +440,7 @@ main {
 
 .sliders {
   height: 266px;
-  -ms-flex-preferred-size: 398px;
-  flex-basis: 398px;
+  width: 398px;
   -webkit-transition: all .3s;
   -o-transition: all .3s;
   transition: all .3s;
@@ -559,13 +558,7 @@ main {
       #new .glide__track .glide__slides .glide__slide, #trending .glide__track .glide__slides .glide__slide, #digital .glide__track .glide__slides .glide__slide, #continue .glide__track .glide__slides .glide__slide {
         height: 100%;
         padding-top: 3%;
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-        justify-content: space-between;
-        width: 820px !important; }
+        width: 400px !important; }
         @media (max-width: 550px) {
           #new .glide__track .glide__slides .glide__slide, #trending .glide__track .glide__slides .glide__slide, #digital .glide__track .glide__slides .glide__slide, #continue .glide__track .glide__slides .glide__slide {
             width: 500px !important; } }
@@ -593,7 +586,8 @@ main {
 
 #continue {
   width: 90%;
-  margin-right: auto; }
+  margin-right: auto;
+  margin-top: -2.5rem; }
   #continue .v-title {
     -webkit-transform: translateY(5.5rem);
     -ms-transform: translateY(5.5rem);
@@ -601,7 +595,7 @@ main {
   #continue:hover {
     width: 90%; }
   #continue .glide__arrow {
-    margin-top: 1.1rem; }
+    margin-top: 2.4rem; }
 
 .glide-continue, .glide__track {
   position: relative; }
@@ -908,7 +902,7 @@ main {
     .v-course-brief .brief-container h1 {
       color: #f8f8f8;
       font-weight: 700;
-      font-size: 5rem;
+      font-size: 70px;
       font-family: "Montserrat", sans-serif; }
     .v-course-brief .brief-container .brief-desc {
       color: #fff;
@@ -935,7 +929,7 @@ main {
       .v-course-brief .brief-container .bottom-action-buttons .start-now {
         display: inline-block;
         padding-top: 0rem;
-        font-size: 1.25rem;
+        font-size: 1rem;
         font-weight: 600;
         font-family: "Montserrat", sans-serif; }
         .v-course-brief .brief-container .bottom-action-buttons .start-now i {
@@ -949,7 +943,7 @@ main {
         display: inline-block;
         color: #fff;
         border: 2px solid #fff;
-        font-size: 1.25rem;
+        font-size: 1rem;
         border-radius: 50px;
         padding-top: 0;
         padding: 0 1.5rem .7rem 1.5rem;
