@@ -11,7 +11,6 @@ import { TweenMax, Expo } from 'gsap'
 //========= GLOBAL VARIABLES====//
 const slider  = document.querySelectorAll('.sliders')
 const slideContainer = document.querySelectorAll('.v-courses')
-//const briefLayout = document.querySelectorAll('.v-course-brief')
 const searchBar = document.querySelector('.search')
 const notificationsBar = document.querySelector('.notifications')
 const triggerNotify =  document.querySelector('.--trigger-notify')
@@ -33,7 +32,7 @@ if (document.querySelector('main')) {
   
   
 //====== Glide Continue ====//
-var glide = new Glide('.glide-continue', {
+var glide = new Glide('#continue', {
   type: 'carousel',
   perView: 4,
   focusAt: 'center',
@@ -101,6 +100,7 @@ digial.mount()
   const newCourses = document.querySelector('#new')
   const trendingCourses = document.querySelector('#trending')
   const digitalCourses = document.querySelector('#digital')
+  const continueCourses = document.querySelector('#continue')
   
   
   
@@ -131,6 +131,15 @@ digial.mount()
       digitalCourses.style.pointerEvents = 'none'
     })
   })
+    //Digital Courses
+    continueCourses.querySelectorAll('.show-dictionary__prev').forEach((open) => {
+      open.addEventListener('click', (e) => {
+        open.closest('.sliders').classList.add('slider-active')
+        document.querySelector('.continue-brief').classList.add('brief-active')
+        //Deactivate
+        continueCourses.style.pointerEvents = 'none'
+      })
+    })
   
   
    
@@ -141,12 +150,13 @@ digial.mount()
     closeBrief.addEventListener('click', (e) => {
       e.preventDefault()
        document.querySelector('.slider-active').classList.remove('slider-active')
-      document.querySelectorAll('.new-brief, .trending-brief, .digital-brief').forEach((el) => {
+      document.querySelectorAll('.new-brief, .trending-brief, .digital-brief, .continue-brief').forEach((el) => {
         el.classList.remove('brief-active')
       })
       newCourses.style.pointerEvents = ''
       trendingCourses.style.pointerEvents = ''
       digitalCourses.style.pointerEvents = ''
+      continueCourses.style.pointerEvents = ''
     })
   })
   
@@ -204,12 +214,13 @@ digial.mount()
    //Show User Profile Preview Bar
     triggerUI.addEventListener('click', (e) => {
       e.preventDefault()
-      UIPrev.style.display = 'block'
-    })
-   
-  //Close User Profile Preview Bar
-    UIPrev.addEventListener('mouseleave', () => {
-      UIPrev.style.display = 'none'
+      if (UIPrev.classList.contains('cc-class')) {
+        UIPrev.style.display = 'block'
+        UIPrev.classList.remove('cc-class') 
+      } else {
+        UIPrev.style.display = 'none'
+        UIPrev.classList.add('cc-class') 
+      }
     })
 
 
@@ -269,7 +280,23 @@ if (triggerNotify) {
 
 
   //========== ( Start V Main Course Page) | Entrance | Change Backgrond Colors
-  if(vManiCourse){
+if (vManiCourse) {
+    
+  const checkBgColor = () => {
+    let sidebarBg = getComputedStyle(proBParent, null).getPropertyValue('background-color')
+
+    if(sidebarBg == 'rgb(208, 211, 212)'){
+      TweenMax.to('.progress-overlay', .2, {backgroundColor: '#D0D3D4'})
+      vManiCourse.querySelectorAll('.inner-q__wrap').forEach((innerQ) => {
+        innerQ.classList.add('q-wrap-color')
+      })
+    } else {
+      TweenMax.to('.progress-overlay', .2, {backgroundColor: '#2d2d2d'})
+      vManiCourse.querySelectorAll('.inner-q__wrap').forEach((innerQ) => {
+        innerQ.classList.remove('q-wrap-color')
+      })
+    }
+  }
 
 
     //======= Change Theme Color  // Light Theme
@@ -318,6 +345,7 @@ if (triggerNotify) {
          TweenMax.to(themeIC, .2, {x: -2})
         _this.style.backgroundColor = '#1D1D1D'
         changeTheme()
+        checkBgColor()
 
         
       } else {
@@ -326,6 +354,7 @@ if (triggerNotify) {
         TweenMax.to(themeIC, .3, {x: 40})
         _this.style.backgroundColor = '#ffffff'
         resetTheme()
+        checkBgColor()
       }
     })
 
@@ -372,7 +401,6 @@ if (triggerNotify) {
       }
 
       //Change Progress Overlay Helper Color // And other Elements
-
       if(sidebarBg == 'rgb(208, 211, 212)'){
         TweenMax.to('.progress-overlay', .2, {backgroundColor: '#D0D3D4'})
         vManiCourse.querySelectorAll('.inner-q__wrap').forEach((innerQ) => {
@@ -550,6 +578,7 @@ if (document.querySelector('.v-access')) {
 
 
 
+//Scale Showcase Bg
 document.addEventListener('DOMContentLoaded', () => {
   if (document.querySelector('.showcase')) {
     TweenMax.from('.showcase', 2, { scale: 3, ease: Expo.easeInOut, backgroundPositionY: 'bottom', delay: 1 })
