@@ -584,34 +584,36 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 //========Create Space on Sliders Hover ====
-DOM.querySelectorAll('.sliders').forEach((slide) => {
-  slide.addEventListener('mouseenter', () => {
+DOM.querySelectorAll('.glide__slide').forEach((slide) => {
+
     let ns = slide.nextElementSibling
     let ps = slide.previousElementSibling
 
-    if (ps) {
-     // ps.classList.add('active-margin')
-      console.log('..');
-      TweenMax.to(ps, .3, {marginRight: '4rem'})
-      
-    }
-   
-    
-    
-  })
-  //Remove Class
-  slide.addEventListener('mouseleave', () => {
-    let ns = slide.nextElementSibling
-    let ps = slide.previousElementSibling
+  slide.querySelectorAll('.sliders').forEach((slideChild) => {
+    slideChild.addEventListener('mouseenter', () => {
+    //Left Slider
+      if (ps) {
+        TweenMax.to(ps, .3, {marginLeft: '3.5rem', x: -55})
+      }
+      //Right Slider
+      if (ns) {
+        TweenMax.to(ns, .3, {marginLeft: '4rem'})
+      }
+    })
 
-    if (ps) {
-      //ps.classList.remove('active-margin')
-      TweenMax.to(ps, .3, {x: 0})
-    }
-   
-    
-    
+    //Remove Space
+    slideChild.addEventListener('mouseleave', () => {
+      //Left Slider
+        if (ps) {
+          TweenMax.to(ps, .3, {marginLeft: '0rem', x: 0})
+        }
+        //Right Slider
+        if (ns) {
+          TweenMax.to(ns, .3, {marginLeft: '0rem'})
+        }
+      })
   })
+
 })
 
   
