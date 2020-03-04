@@ -590,7 +590,10 @@ DOM.querySelectorAll('.sliders').forEach((slide) => {
     let ps = slide.previousElementSibling
 
     if (ps) {
-      ps.classList.add('active-margin')
+     // ps.classList.add('active-margin')
+      console.log('..');
+      TweenMax.to(ps, .3, {marginRight: '4rem'})
+      
     }
    
     
@@ -602,7 +605,8 @@ DOM.querySelectorAll('.sliders').forEach((slide) => {
     let ps = slide.previousElementSibling
 
     if (ps) {
-      ps.classList.remove('active-margin')
+      //ps.classList.remove('active-margin')
+      TweenMax.to(ps, .3, {x: 0})
     }
    
     

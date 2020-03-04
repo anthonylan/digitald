@@ -550,7 +550,11 @@ main {
       .sliders .bottom-contents {
         top: -1.2rem; }
         .sliders .bottom-contents p {
-          font-size: .7rem; } }
+          font-size: .7rem; }
+        .sliders .bottom-contents .show-dictionary__prev {
+          width: 1.5rem !important; }
+      .sliders .top-content .ui-action-icons i {
+        font-size: 1rem; } }
 
 #new, #trending, #digital, #continue {
   height: 450px;
@@ -1109,7 +1113,9 @@ main {
     .v-course-brief .brief-container h1 {
       font-size: 50px; }
     .v-course-brief .steps h3 {
-      font-size: 1rem !important; } }
+      font-size: 1rem !important; }
+    .v-course-brief .--close-course-preview i {
+      font-size: 3rem; } }
 
 .v-in-course__header {
   margin-left: 250px; }

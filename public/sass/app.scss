@@ -517,6 +517,16 @@ main{
             p{
                 font-size: .7rem;
             }
+            .show-dictionary__prev{
+                width: 1.5rem !important;
+            }
+        }
+        .top-content{
+            .ui-action-icons{
+                i{
+                    font-size: 1rem;
+                }
+            }
         }
     }
 
@@ -795,6 +805,7 @@ main{
 .cc-class{
     display: block !important;
 }
+
 
 
 
@@ -1085,6 +1096,11 @@ main{
       .steps{
           h3{
               font-size: 1rem !important;
+          }
+      }
+      .--close-course-preview{
+          i{
+              font-size: 3rem;
           }
       }
     }
@@ -1949,6 +1965,3 @@ main{
 
 
 
-.active-margin{
-  
-}
