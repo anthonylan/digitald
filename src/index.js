@@ -151,7 +151,9 @@ digial.mount()
   document.querySelectorAll('.--close-course-preview').forEach((closeBrief) => {
     closeBrief.addEventListener('click', (e) => {
       e.preventDefault()
-       document.querySelector('.slider-active').classList.remove('slider-active')
+      document.querySelectorAll('.slider-active').forEach((sa) => {
+        sa.classList.remove('slider-active')
+       })
       document.querySelectorAll('.new-brief, .trending-brief, .digital-brief, .continue-brief').forEach((el) => {
         el.classList.remove('brief-active')
       })
@@ -593,7 +595,7 @@ DOM.querySelectorAll('.glide__slide').forEach((slide) => {
     slideChild.addEventListener('mouseenter', () => {
     //Left Slider
       if (ps) {
-        TweenMax.to(ps, .3, {marginLeft: '3.5rem', x: -55})
+        TweenMax.to(ps, .3, {marginLeft: '3.7rem', x: -57})
       }
       //Right Slider
       if (ns) {
