@@ -618,8 +618,14 @@ main {
   #continue .glide__arrow {
     margin-top: 2.4rem; }
   @media only screen and (min-device-width: 768px) {
-    #continue .glide__arrow {
-      margin-top: 3.4rem; } }
+    #continue {
+      height: 370px !important; }
+      #continue .glide__arrow {
+        margin-top: 3.4rem; }
+      #continue .v-title {
+        -webkit-transform: translateY(7rem);
+        -ms-transform: translateY(7rem);
+        transform: translateY(7rem); } }
 
 .glide-continue, .glide__track {
   position: relative; }

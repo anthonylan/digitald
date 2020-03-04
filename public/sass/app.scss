@@ -607,9 +607,14 @@ main{
     }
     @media only screen   
     and (min-device-width : 768px)  { 
+        height: 370px !important;
         .glide__arrow{
             margin-top: 3.4rem;
         }
+        .v-title{
+            transform: translateY(7rem);
+        }
+        
     }
 }
 .glide-continue, .glide__track{
