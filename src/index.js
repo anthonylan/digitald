@@ -651,23 +651,33 @@ slide.querySelectorAll('.sliders').forEach((slideChild) => {
       if (deviceHeight >= 1080) {
         let dblPs = ps.previousElementSibling
         let dblPs2 = dblPs.previousElementSibling
-        let dblPs3 = dblPs2.previousElementSibling
+       
+      
 
         TweenMax.to(ps, .3, { x: -86 })
         TweenMax.to(dblPs, .3, { x: -86 })
         TweenMax.to(dblPs2, .3, { x: -86 })
-        TweenMax.to(dblPs3, .3, { x: -86 })
+        
+        if (dblPs2) {
+          let dblPs3 = dblPs2.previousElementSibling
+          TweenMax.to(dblPs3, .3, { x: -86 })
+        }
         
         
       } else {
         let dblPs = ps.previousElementSibling
         let dblPs2 = dblPs.previousElementSibling
-        let dblPs3 = dblPs2.previousElementSibling
+        
 
         TweenMax.to(ps, .3, { x: -57 })
         TweenMax.to(dblPs, .3, { x: -57 })
         TweenMax.to(dblPs2, .3, { x: -57 })
-        TweenMax.to(dblPs3, .3, { x: -57 })
+
+        if (dblPs2) {
+          let dblPs3 = dblPs2.previousElementSibling
+          TweenMax.to(dblPs3, .3, { x: -57 })
+        }
+        
       }
      
     }
@@ -689,12 +699,16 @@ slide.querySelectorAll('.sliders').forEach((slideChild) => {
      if (ps) {
        let dblPs = ps.previousElementSibling
        let dblPs2 = dblPs.previousElementSibling
-       let dblPs3 = dblPs2.previousElementSibling
+       
 
        TweenMax.to(ps, .3, { x: 0 })
        TweenMax.to(dblPs, .3, { x: 0 })
        TweenMax.to(dblPs2, .3, { x: 0 })
-       TweenMax.to(dblPs3, .3, { x: 0 })
+       if (dblPs2) {
+         let dblPs3 = dblPs2.previousElementSibling
+         TweenMax.to(dblPs3, .3, { x: 0 })
+       }
+       
       }
       //Right Slider
       if (ns) {
