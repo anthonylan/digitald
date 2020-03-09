@@ -206,13 +206,14 @@ label.active {
   color: #E4437C !important; }
 
 .top-layer--header {
-  height: 10px;
+  height: 25px;
   width: 100%;
   position: fixed;
-  top: -1%;
+  top: -5%;
   left: 0;
-  -webkit-box-shadow: 0 20px 20px -1px rgba(0, 0, 0, 0.8);
-  box-shadow: 0 20px 20px -1px rgba(0, 0, 0, 0.8); }
+  z-index: 30;
+  -webkit-box-shadow: 0 25px 25px -1px rgba(0, 0, 0, 0.8);
+  box-shadow: 0 25px 25px -1px rgba(0, 0, 0, 0.8); }
 
 .g-header .notifications {
   position: fixed;
@@ -445,6 +446,8 @@ main {
 
 .v-courses {
   width: 100%; }
+  .v-courses * {
+    overflow: visible !important; }
 
 .sliders {
   height: 266px;
@@ -454,6 +457,7 @@ main {
   transition: all .3s;
   margin: 0 .5rem;
   position: relative;
+  z-index: 10;
   /* For 1024 Resolution */ }
   .sliders:hover {
     -webkit-transform: scale(1.4);
@@ -465,7 +469,9 @@ main {
     height: 100%;
     width: 100%;
     background-position: center;
-    background-size: cover; }
+    background-size: cover;
+    position: relative;
+    z-index: 10; }
     .sliders .slide-content h2 {
       color: #fff;
       font-size: 1.75rem;
@@ -1972,3 +1978,12 @@ main {
       flex-direction: column; }
       .v-course-brief .steps-wrapper .circle-pass {
         left: -11rem; } }
+
+.cloned-image {
+  position: absolute;
+  top: -50%;
+  left: 15%;
+  z-index: 3; }
+  .cloned-image img {
+    width: 90%;
+    margin: 0 auto; }

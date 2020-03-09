@@ -178,7 +178,37 @@ digial.mount()
       }
       
       triggerNotify.classList.add('scale-notify')
-      setTimeout(() => {  triggerNotify.classList.remove('scale-notify') }, 500)
+      setTimeout(() => { triggerNotify.classList.remove('scale-notify') }, 500)
+      
+  
+
+      //Get Bckground url
+      const img = addTLicon.closest('.slide-content'),
+      style = img.currentStyle || window.getComputedStyle(img, false),
+        bi = style.backgroundImage.slice(4, -1).replace(/['"]/g, "");
+      
+      console.log(bi);
+
+      const sourceImage = document.createElement('img'),
+        imgContainer = document.createElement('div'),
+        parentWrapper = addTLicon.closest('.sliders');
+      imgContainer.className = 'cloned-image'
+      parentWrapper.appendChild(imgContainer)
+      
+      
+      sourceImage.src = bi;
+      //imgContainer.appendChild(sourceImage);
+
+      function cloneImg(){
+      imgContainer.appendChild(sourceImage.cloneNode(true));
+
+      TweenMax.to(imgContainer, 2, {top: '-100%'})
+      }
+      
+      cloneImg()
+      
+      
+      
     })
   })
   
@@ -775,3 +805,14 @@ for (let i = 0, len = nav.children.length; i < len; i++){
 window.addEventListener('resize', () => {
   location.reload()
 })
+
+
+//Clone Image
+// var sourceImage = document.createElement('img'),
+// imgContainer = document.getElementById("content");
+// sourceImage.src = "[some img url]";
+// imgContainer.appendChild(sourceImage);
+
+// function cloneImg(){
+// imgContainer.appendChild(sourceImage.cloneNode(true));
+// }
