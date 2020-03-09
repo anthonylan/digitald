@@ -169,10 +169,35 @@ digial.mount()
   
   document.querySelectorAll('.ui-action-icons i:first-child').forEach((addTLicon) => {
     addTLicon.addEventListener('click', (e) => {
+
+      //Get Bckground url
+      const img = addTLicon.closest('.slide-content'),
+            style = img.currentStyle || window.getComputedStyle(img, false),
+            bi = style.backgroundImage.slice(4, -1).replace(/['"]/g, "");
+      
+      
+      //Clone Image
+      const sourceImage = document.createElement('img'),
+            imgContainer = document.createElement('div'),
+            parentWrapper = addTLicon.closest('.sliders');
+            imgContainer.className = 'cloned-image'
+            parentWrapper.appendChild(imgContainer)
+      
+      
+            sourceImage.src = bi;
+      //imgContainer.appendChild(sourceImage);
+
+      function cloneImg(){
+      imgContainer.appendChild(sourceImage.cloneNode(true));
+
+        TweenMax.to(imgContainer, 5, { top: '-1000%', opacity: 0, scale: -3})
+      }
+      
   
       let icon = e.target
       if(icon.innerHTML == 'add'){
         icon.textContent = 'check'
+        cloneImg()
       } else {
         icon.textContent = 'add'
       }
@@ -182,30 +207,8 @@ digial.mount()
       
   
 
-      //Get Bckground url
-      const img = addTLicon.closest('.slide-content'),
-      style = img.currentStyle || window.getComputedStyle(img, false),
-        bi = style.backgroundImage.slice(4, -1).replace(/['"]/g, "");
       
-      console.log(bi);
-
-      const sourceImage = document.createElement('img'),
-        imgContainer = document.createElement('div'),
-        parentWrapper = addTLicon.closest('.sliders');
-      imgContainer.className = 'cloned-image'
-      parentWrapper.appendChild(imgContainer)
-      
-      
-      sourceImage.src = bi;
-      //imgContainer.appendChild(sourceImage);
-
-      function cloneImg(){
-      imgContainer.appendChild(sourceImage.cloneNode(true));
-
-      TweenMax.to(imgContainer, 2, {top: '-100%'})
-      }
-      
-      cloneImg()
+   
       
       
       
