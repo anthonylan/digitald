@@ -43,6 +43,18 @@ html, body{
   }
   
 
+  //Hide on Screens
+  @media (max-width:550px){
+      .hide-on-sm, .controller{
+          display: none !important;
+      }
+  }
+  @media (min-width:550px){
+      .hide-on-lg{
+          display: none;
+      }
+  }
+
 //==============User Login
 .v-header{
     height: 100vh;
@@ -210,10 +222,10 @@ label.active{
             &::before{
                 content: '';
                 position: absolute;
-                right: 14%;
-                top: -10%;
-                height: 1.195rem;
-                width:  1.195rem;
+                right: 22%;
+                top: -6%;
+                height: 1rem;
+                width:  1rem;
                 background-color: $brand-color;
                 border-radius: 100%;
             }
@@ -386,6 +398,7 @@ main{
 }
 
 
+
 .v-courses{
     width: 100%;
 }
@@ -397,7 +410,7 @@ main{
         position: relative;
         &:hover{
             transform: scale(1.4);
-            z-index: 10;
+            z-index: 15;
         }
         .slide-content{
             display: table;
@@ -529,6 +542,36 @@ main{
             }
         }
     }
+     // For 1920
+     @media (min-width:1920px) {
+        height: 300px;
+        width: 420px !important;
+        .slide-content{
+            h2{
+                font-size: 2rem;
+            }
+        }
+        .bottom-layer{
+            h2{
+                transform: translateX(-.2rem);
+            }
+        }
+        .top-content{
+            .ui-action-icons{
+                i{
+                    font-size: 1.5rem;
+                }
+            }
+        }
+        .bottom-contents{
+            p{
+                font-size: 1rem;
+            }
+            .show-dictionary__prev{
+                width: 2rem !important;
+            }
+        }
+    }
 
     }
 
@@ -552,7 +595,6 @@ main{
             .glide__slide{
                 height: 100%;
                 padding-top: 3%;
-                width: 400px !important;
                 @media (max-width:550px) {
                     width: 500px !important;
                 }
@@ -561,10 +603,13 @@ main{
                 and (min-device-width : 768px)  { 
                     width: 310px !important;
                 }
+
+                // For 1920
+                @media (min-width:1920px) {
+                    width: 430px !important;
+                }
             }
-            @media (max-width:550px) {
-                
-            }
+            
         }
     }
     .glide__arrow{
@@ -600,6 +645,10 @@ main{
               margin-top: .9rem;
           }
       }
+       // For 1920
+       @media (min-width:1920px) {
+        height: 500px !important;
+    }
 }
 
 #continue{
@@ -617,7 +666,7 @@ main{
     }
     @media only screen   
     and (min-device-width : 768px)  { 
-        height: 370px !important;
+        height: 390px !important;
         .glide__arrow{
             margin-top: 3.4rem;
         }
@@ -625,6 +674,13 @@ main{
             transform: translateY(7rem);
         }
         
+    }
+    .progress{
+        bottom: -1rem;
+        border-radius: 0px;
+    }
+    @media (min-width:1920px) {
+        height: 590px !important;
     }
 }
 .glide-continue, .glide__track{
@@ -878,7 +934,13 @@ main{
             @media (max-width:550px) {
                 padding-top: 1%;
                 .edit-img{
-                    left: 2rem;
+                    width: 30px;
+                    height: 30px;
+                    right: 4rem;
+                    top: 1rem; i{
+                        font-size: 1rem;
+                        transform: translate(.4rem, .3rem);
+                    }
                 }
                 .img-wrapper{
                     margin-left: 3rem;
@@ -897,11 +959,22 @@ main{
         margin-top: 10%;
         padding-top: 4rem;
         height: 100%;
-        width: 90%;
+        width: 95%;
+        overflow-y: scroll;
         .inner-content{
             flex-direction: column;
             .ui-settings{
-                
+                .row{
+                    .input-field{
+                        margin-top: -.5rem;
+                    }
+                }
+            }
+        }
+        .setting-action{
+            .g-btn{
+                display: block;
+                transform: translateX(50%);
             }
         }
     }
@@ -1608,9 +1681,9 @@ main{
 //====== TOTAL POINTS PAGE ===// 
 .controller{
     position: absolute;
-    top: 68%;
+    top: 58%;
     z-index: 10;
-    transform: translateY(90%);
+    transform: translateY(60%);
     font-size: 6rem;
     color: #fff;
     cursor: pointer;
@@ -1628,6 +1701,9 @@ main{
     justify-content: space-between;
     width: 80%;
     margin: 0 auto;
+    @media (max-width:550px) {
+        display: block !important;
+    }
 }
 .carousel{
     height: 900px;
@@ -1716,6 +1792,8 @@ main{
             width: 100%;
             background-color: $brand-gray;
             opacity: .5;
+            position: relative;
+            z-index: 10;
             cursor: pointer;
             h4{
                 writing-mode: vertical-rl;
@@ -1794,7 +1872,9 @@ main{
         text-align: center;
         margin-left: auto;
         position: relative;
+        left: -.1rem;
         flex-basis: 90%;
+        z-index: 5;
     }
     .top-section{
         transform: translateY(-39%);
@@ -1809,6 +1889,10 @@ main{
             @include userProfileImg();
             width: 172px;
             height: 172px;
+            @media (max-width:550px) {
+                width: 100px;
+                height: 100px;
+            }
         }
     }
     .statictics{
@@ -1831,6 +1915,29 @@ main{
                 }
             }
         }
+        @media (max-width:550px) {
+            top: 10rem;
+            .us-details{
+                .progress{
+                    height: 2px;
+                }
+            }
+        }
+    }
+    @media (max-width:550px) {
+        width: 298px;
+        height: 600px;
+        .inner-achievement{
+            left: -1rem;
+            padding-right: .5rem;
+            flex-basis: 86%;
+        }
+        .achivements{
+            margin-top: 4rem;
+            h3{
+                font-size: 1.8rem;
+            }
+        }
     }
 }
 
@@ -1848,13 +1955,53 @@ main{
     .badge-wrapper{
         width: 80%;
         margin: 0 auto;
-        display: flex;
-        justify-content: space-between;
+        display: grid;
+        grid-template-columns: repeat(4, 18%);
+        grid-gap: 6rem;
         .badge{
-            flex-basis: 18%;
+            //flex-basis: 18%;
             img{
                 width: 100%;
             }
+        }
+    }
+    @media (max-width:550px) {
+        h2{
+            margin-bottom: 2rem;
+        }
+        .badge-wrapper{
+            grid-template-columns: repeat(2, 48%);
+            grid-gap: 1rem;
+        }
+    }
+}
+
+
+//====== Mobile Achievements =====/// 
+.mobile-carousel{
+    position: relative;
+    margin-top: 10%;
+    min-width: 100%;
+
+    .ua-navigation{
+       overflow-x: scroll;
+        display: flex;
+        background-color: transparent;
+        width: 100%;
+        a{
+            min-width: 160px;
+            display: block;
+            text-align: center;
+            text-transform: uppercase;
+            font-size: 1rem;
+            color: $brand-color;
+            margin: 2rem 0;
+        }
+        .ac-link{
+            color: #fff;
+            background-color: $brand-color;
+            padding: .3rem 1rem;
+            border-radius: 50px;
         }
     }
 }

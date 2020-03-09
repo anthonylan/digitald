@@ -586,7 +586,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 //========Create Space on Sliders Hover ====
-DOM.querySelectorAll('.glide__slide').forEach((slide) => {
+const deviceHeight = window.screen.availHeight
+const deviceWidth = window.screen.availWidth
+
+DOM.querySelectorAll('#new .glide__slide, #trending .glide__slide, #digital .glide__slide').forEach((slide) => {
 
     let ns = slide.nextElementSibling
     let ps = slide.previousElementSibling
@@ -595,12 +598,23 @@ DOM.querySelectorAll('.glide__slide').forEach((slide) => {
     slideChild.addEventListener('mouseenter', () => {
     //Left Slider
       if (ps) {
-        TweenMax.to(ps, .3, {marginLeft: '3.7rem', x: -57})
+        if (deviceHeight >= 1080) {
+          TweenMax.to(ps, .3, {marginLeft: '5.9rem', x: -86})
+        } else {
+          TweenMax.to(ps, .3, {marginLeft: '3.7rem', x: -57})
+        }
+       
       }
       //Right Slider
       if (ns) {
-        TweenMax.to(ns, .3, {marginLeft: '4rem'})
+        if (deviceHeight >= 1080) {
+          TweenMax.to(ns, .3, { marginLeft: '6rem' })
+        } else {
+          TweenMax.to(ns, .3, { marginLeft: '4rem' })
+        }
       }
+
+
     })
 
     //Remove Space
@@ -618,6 +632,132 @@ DOM.querySelectorAll('.glide__slide').forEach((slide) => {
 
 })
 
+
+
+
+//Create Space for #continue
+DOM.querySelectorAll('#continue .glide__slide').forEach((slide) => {
+
+  let ns = slide.nextElementSibling
+  let ps = slide.previousElementSibling
+
+  
   
 
+slide.querySelectorAll('.sliders').forEach((slideChild) => {
+  slideChild.addEventListener('mouseenter', () => {
+  //Left Slider
+    if (ps) {
+      if (deviceHeight >= 1080) {
+        let dblPs = ps.previousElementSibling
+        let dblPs2 = dblPs.previousElementSibling
+        let dblPs3 = dblPs2.previousElementSibling
 
+        TweenMax.to(ps, .3, { x: -86 })
+        TweenMax.to(dblPs, .3, { x: -86 })
+        TweenMax.to(dblPs2, .3, { x: -86 })
+        TweenMax.to(dblPs3, .3, { x: -86 })
+        
+        
+      } else {
+        let dblPs = ps.previousElementSibling
+        let dblPs2 = dblPs.previousElementSibling
+        let dblPs3 = dblPs2.previousElementSibling
+
+        TweenMax.to(ps, .3, { x: -57 })
+        TweenMax.to(dblPs, .3, { x: -57 })
+        TweenMax.to(dblPs2, .3, { x: -57 })
+        TweenMax.to(dblPs3, .3, { x: -57 })
+      }
+     
+    }
+    //Right Slider
+    if (ns) {
+      if (deviceHeight >= 1080) {
+        TweenMax.to(ns, .3, { marginLeft: '6rem' })
+      } else {
+        TweenMax.to(ns, .3, { marginLeft: '4rem' })
+      }
+    }
+
+
+  })
+
+  //Remove Space
+  slideChild.addEventListener('mouseleave', () => {
+    //Left Slider
+     if (ps) {
+       let dblPs = ps.previousElementSibling
+       let dblPs2 = dblPs.previousElementSibling
+       let dblPs3 = dblPs2.previousElementSibling
+
+       TweenMax.to(ps, .3, { x: 0 })
+       TweenMax.to(dblPs, .3, { x: 0 })
+       TweenMax.to(dblPs2, .3, { x: 0 })
+       TweenMax.to(dblPs3, .3, { x: 0 })
+      }
+      //Right Slider
+      if (ns) {
+        TweenMax.to(ns, .3, {marginLeft: '0rem'})
+      }
+    })
+})
+
+})
+
+
+
+
+
+
+
+
+
+
+//Mobile Achivement // Page => Progress
+const navM = DOM.querySelector('.ua-navigation')
+
+if (navM) {
+  
+//==== Mobile Carousel ====// 
+DOM.querySelectorAll('.ua-navigation a').forEach((links) => {
+  links.addEventListener('click', (e) => {
+    e.preventDefault()
+    DOM.querySelector('.ac-link').classList.remove('ac-link')
+    let link = e.target;
+    link.classList.add('ac-link');
+
+  })
+})
+  
+
+for (let i = 0, len = nav.children.length; i < len; i++){
+     
+  (function(index){
+    nav.children[i].onclick = function(){
+      console.log(index);
+      if (index === 0) {
+        TweenMax.to(navM, .3, { x: 0 })
+      } else if (index === 1) {
+        TweenMax.to(navM, .3, { x: -60 })
+      } else if (index === 2) {
+        TweenMax.to(navM, .3, { x: -120 })
+      } else if (index === 3) {
+        TweenMax.to(navM, .3, { x: -180 })
+      } else if (index === 4) {
+        TweenMax.to(navM, .3, { x: -220 })
+      } 
+          
+    }    
+})(i);
+}
+}
+
+
+
+
+
+//Resize Listener
+window.addEventListener('resize', () => {
+  location.reload()
+})
