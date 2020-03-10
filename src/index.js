@@ -941,7 +941,13 @@ window.onscroll = function(ev) {
 
 //Resize Listener
 window.addEventListener('resize', () => {
-  location.reload()
+  if (deviceHeight > 700) {
+    location.reload()
+  }
 })
+
+
+
+
 
 
