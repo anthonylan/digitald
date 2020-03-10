@@ -649,7 +649,7 @@ main{
       and (min-device-width : 768px)  { 
           height: 350px !important;
           .glide__arrow{
-              margin-top: .9rem;
+              margin-top: 0rem;
           }
       }
        // For 1920
@@ -675,7 +675,37 @@ main{
     and (min-device-width : 768px)  { 
         height: 390px !important;
         .glide__arrow{
-            margin-top: 3.4rem;
+            margin-top: 2rem;
+            opacity: 1;
+            background: transparent;
+            color: transparent;
+            transition: all .3s;
+            &:hover{
+                background-color: rgba(0, 0, 0, .3);
+                color: #fff;
+            }
+        }
+        .glide__arrow--left{
+            &::before{
+                content: '';
+                position: absolute;
+                top: -30%;
+                left: -6rem;
+                width: 90px;
+                height: 150%;
+                background-color: $brand-black;
+            }
+        }
+        .glide__arrow--right{
+            &::before{
+                content: '';
+                position: absolute;
+                top: -30%;
+                right: -6rem;
+                width: 90px;
+                height: 150%;
+                background-color: $brand-black;
+            }
         }
         .v-title{
             transform: translateY(7rem);
@@ -1258,6 +1288,7 @@ main{
     }
     .v-questions{
         padding: 2rem 0;
+        display: none;
         .img-sm{
             width: 200px;
             display: block;
@@ -1486,6 +1517,7 @@ main{
     width: 100%;
     margin: 0 auto;
     text-align: center;
+    display: none;
     .stat-inner__wrapper{
         display: flex;
         justify-content: space-between;
@@ -1818,8 +1850,8 @@ main{
             &::before{
                 content: '';
                 position: absolute;
-                right: -.4rem;
-                top: -1rem;
+                right: -.5rem;
+                top: -1.5rem;
                 height: 40px;
                 width: 100%;
                 background-color: $brand-gray;
@@ -1838,8 +1870,8 @@ main{
             &::before{
                 content: '';
                 position: absolute;
-                right: -.4rem;
-                bottom: -1rem;
+                right: -.5rem;
+                bottom: -1.5rem;
                 height: 40px;
                 width: 100%;
                 background-color: $brand-gray;

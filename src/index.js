@@ -485,6 +485,119 @@ if (vManiCourse) {
 
    
 
+
+    //Show Result if Last Child is clicked
+    DOM.querySelector('.v-questions:last-child').querySelectorAll('.question-options').forEach((qp) => {
+      qp.addEventListener('click', () => {
+        setTimeout(() => {  DOM.querySelector('.v-course-stats').style.display = 'block' }, 3000)
+      })
+      
+    })
+
+
+
+    //Hide Options
+    const optionsNow = DOM.querySelectorAll('.v-questions')
+
+    for (let i = 0; i < optionsNow.length; i++){
+      optionsNow[0].style.display = 'block'
+
+      //If click show the following options
+      optionsNow[0].addEventListener('click', () => {
+        if (optionsNow[1]) {
+          optionsNow[1].style.display = 'block'
+        }
+      })
+      //#2
+      if (optionsNow[1]) {
+        optionsNow[1].addEventListener('click', (e) => {
+          if(optionsNow[2]) { optionsNow[2].style.display = 'block' }
+        })
+      }
+      //#3
+      if (optionsNow[2]) {
+        optionsNow[2].addEventListener('click', () => {
+          if(optionsNow[3]) { optionsNow[3].style.display = 'block' }
+        })
+      }
+      //#4
+      if (optionsNow[3]) {
+        optionsNow[3].addEventListener('click', () => {
+          if(optionsNow[4]) { optionsNow[4].style.display = 'block' }
+        })
+      }
+      //#5
+      if (optionsNow[4]) {
+        optionsNow[4].addEventListener('click', () => {
+          if(optionsNow[5]) { optionsNow[5].style.display = 'block' }
+        })
+      }
+
+      //#6
+      if (optionsNow[5]) {
+        optionsNow[5].addEventListener('click', () => {
+          if(optionsNow[6]) { optionsNow[6].style.display = 'block' }
+        })
+      }
+      //#7
+      if (optionsNow[6]) {
+        optionsNow[6].addEventListener('click', () => {
+          if(optionsNow[7]) { optionsNow[7].style.display = 'block' }
+        })
+      }
+      //#8
+      if (optionsNow[7]) {
+        optionsNow[7].addEventListener('click', () => {
+          if(optionsNow[8]) { optionsNow[8].style.display = 'block' }
+        })
+      }
+      //#9
+      if (optionsNow[8]) {
+        optionsNow[8].addEventListener('click', () => {
+          if(optionsNow[9]) { optionsNow[9].style.display = 'block' }
+        })
+      }
+      
+      //#10
+      if (optionsNow[9]) {
+        optionsNow[9].addEventListener('click', () => {
+          if(optionsNow[10]) { optionsNow[10].style.display = 'block' }
+        })
+      }
+      //#11
+      if (optionsNow[10]) {
+        optionsNow[10].addEventListener('click', () => {
+          if(optionsNow[11]) { optionsNow[11].style.display = 'block' }
+        })
+      }
+      //#12
+      if (optionsNow[11]) {
+        optionsNow[11].addEventListener('click', () => {
+          if(optionsNow[12]) { optionsNow[12].style.display = 'block' }
+        })
+      }
+      //#13
+      if (optionsNow[12]) {
+        optionsNow[12].addEventListener('click', () => {
+          if(optionsNow[13]) { optionsNow[13].style.display = 'block' }
+        })
+      }
+      //#14
+      if (optionsNow[13]) {
+        optionsNow[13].addEventListener('click', () => {
+          if(optionsNow[14]) { optionsNow[14].style.display = 'block' }
+        })
+      }
+      //#15
+      if (optionsNow[14]) {
+        optionsNow[14].addEventListener('click', () => {
+          if(optionsNow[15]) { optionsNow[15].style.display = 'block' }
+        })
+      }
+    }
+
+
+
   }
 
   //Progress on Courses // Steps //Hide and Show Children

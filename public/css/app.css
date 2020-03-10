@@ -639,7 +639,7 @@ main {
     #new, #trending, #digital, #continue {
       height: 350px !important; }
       #new .glide__arrow, #trending .glide__arrow, #digital .glide__arrow, #continue .glide__arrow {
-        margin-top: .9rem; } }
+        margin-top: 0rem; } }
   @media (min-width: 1920px) {
     #new, #trending, #digital, #continue {
       height: 500px !important; } }
@@ -660,7 +660,32 @@ main {
     #continue {
       height: 390px !important; }
       #continue .glide__arrow {
-        margin-top: 3.4rem; }
+        margin-top: 2rem;
+        opacity: 1;
+        background: transparent;
+        color: transparent;
+        -webkit-transition: all .3s;
+        -o-transition: all .3s;
+        transition: all .3s; }
+        #continue .glide__arrow:hover {
+          background-color: rgba(0, 0, 0, 0.3);
+          color: #fff; }
+      #continue .glide__arrow--left::before {
+        content: '';
+        position: absolute;
+        top: -30%;
+        left: -6rem;
+        width: 90px;
+        height: 150%;
+        background-color: #1D1D1D; }
+      #continue .glide__arrow--right::before {
+        content: '';
+        position: absolute;
+        top: -30%;
+        right: -6rem;
+        width: 90px;
+        height: 150%;
+        background-color: #1D1D1D; }
       #continue .v-title {
         -webkit-transform: translateY(7rem);
         -ms-transform: translateY(7rem);
@@ -1234,7 +1259,8 @@ main {
     overflow: hidden;
     background-color: #1D1D1D; }
   .v-in-course .v-questions {
-    padding: 2rem 0; }
+    padding: 2rem 0;
+    display: none; }
     .v-in-course .v-questions .img-sm {
       width: 200px;
       display: block;
@@ -1441,7 +1467,8 @@ main {
 .v-course-stats {
   width: 100%;
   margin: 0 auto;
-  text-align: center; }
+  text-align: center;
+  display: none; }
   .v-course-stats .stat-inner__wrapper {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1741,8 +1768,8 @@ main {
       .user-achievement .side-achivement__bar .bottom::before {
         content: '';
         position: absolute;
-        right: -.4rem;
-        top: -1rem;
+        right: -.5rem;
+        top: -1.5rem;
         height: 40px;
         width: 100%;
         background-color: #2d2d2d;
@@ -1759,8 +1786,8 @@ main {
       .user-achievement .side-achivement__bar .top::before {
         content: '';
         position: absolute;
-        right: -.4rem;
-        bottom: -1rem;
+        right: -.5rem;
+        bottom: -1.5rem;
         height: 40px;
         width: 100%;
         background-color: #2d2d2d;
