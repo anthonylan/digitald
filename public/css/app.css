@@ -86,9 +86,6 @@ html, body {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
-  background-color: #1D1D1D;
-  /* Rules below not implemented in browsers yet */
-  -o-user-select: none;
   user-select: none; }
 
 ::-webkit-scrollbar {
@@ -2014,3 +2011,7 @@ main {
   .cloned-image img {
     width: 90%;
     margin: 0 auto; }
+
+.cloned-image-change {
+  position: fixed;
+  left: 10%; }

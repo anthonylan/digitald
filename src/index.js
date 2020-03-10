@@ -185,13 +185,20 @@ digial.mount()
       
       
             sourceImage.src = bi;
-      //imgContainer.appendChild(sourceImage);
+      
 
       function cloneImg(){
-      imgContainer.appendChild(sourceImage.cloneNode(true));
+        imgContainer.appendChild(sourceImage.cloneNode(true));
+        TweenMax.to(imgContainer, 5, { top: '-1000%', opacity: 0, scale: -3 })
 
-        TweenMax.to(imgContainer, 5, { top: '-1000%', opacity: 0, scale: -3})
+        //Move to List
+      let imgRect = Math.floor(imgContainer.getBoundingClientRect().left) 
+    
+        
+        console.log(imgRect);
       }
+      
+      
       
   
       let icon = e.target
@@ -207,6 +214,7 @@ digial.mount()
       
   
 
+     
       
    
       
@@ -914,7 +922,21 @@ for (let i = 0, len = nav.children.length; i < len; i++){
 }
 
 
+//Change Background Color for Body
 
+if (DOM.querySelector('.dash-footer')) {
+    DOM.style.backgroundColor = '#1D1D1D';
+}
+window.onscroll = function(ev) {
+
+  if (DOM.querySelector('.dash-footer')) {
+    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+      DOM.style.backgroundColor = '#2d2d2d';
+    } else {
+      DOM.style.backgroundColor = '#1D1D1D';
+    }
+  }
+}
 
 
 //Resize Listener
@@ -923,12 +945,3 @@ window.addEventListener('resize', () => {
 })
 
 
-//Clone Image
-// var sourceImage = document.createElement('img'),
-// imgContainer = document.getElementById("content");
-// sourceImage.src = "[some img url]";
-// imgContainer.appendChild(sourceImage);
-
-// function cloneImg(){
-// imgContainer.appendChild(sourceImage.cloneNode(true));
-// }

@@ -17,13 +17,7 @@
 html, body{
     margin: 0;
     font-family: $palanquin;
-    -webkit-user-select: none;        
-    -moz-user-select: none; 
-    -ms-user-select: none; 
-    background-color: $brand-black;
-/* Rules below not implemented in browsers yet */
-     -o-user-select: none;
-     user-select: none;
+    user-select: none;
 }
 
 
@@ -1650,6 +1644,7 @@ main{
     transform: translateY(2rem);
 }
 
+
 //================== COURSE COMPLETED ===== // 
 .course-completed{
     padding: 8rem 0;
@@ -2160,6 +2155,10 @@ main{
         width: 90%;
         margin: 0 auto;
     }
+}
+.cloned-image-change{
+    position: fixed;
+    left: 10%;
 }
 
 
