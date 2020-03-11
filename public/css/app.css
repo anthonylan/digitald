@@ -82,12 +82,14 @@
 
 html, body {
   margin: 0;
+  padding: 0;
   font-family: "Palanquin", sans-serif;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  background-color: #1D1D1D; }
+  background-color: #1D1D1D;
+  overflow: auto; }
 
 ::-webkit-scrollbar {
   width: 0em; }
@@ -1418,6 +1420,8 @@ main {
           content: 'keyboard_arrow_down'; }
         .v-in-course .v-course-sidebar .v-course-progress__bar .progress-wrap .par-theme-changed::before {
           color: #fff; }
+      .v-in-course .v-course-sidebar .v-course-progress__bar .progress-wrap:last-of-type .parent-progress {
+        border-left-color: transparent; }
     .v-in-course .v-course-sidebar .theme-toggle {
       width: 4rem;
       margin-top: 4rem;
@@ -1557,10 +1561,10 @@ main {
 .main-footer {
   width: 100%;
   background-color: #2d2d2d;
-  padding: .5rem 0; }
+  padding: 1rem 0; }
   .main-footer .inner-footer {
     width: 80%;
-    margin: 2rem auto; }
+    margin: 1rem auto; }
     .main-footer .inner-footer .iva {
       float: right;
       text-transform: uppercase;
@@ -2011,6 +2015,15 @@ main {
   z-index: 3; }
   .cloned-image img {
     width: 90%;
+    margin: 0 auto; }
+
+.cloned-image-extra {
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  z-index: 300 !important; }
+  .cloned-image-extra img {
+    width: 400px;
     margin: 0 auto; }
 
 .cloned-image-change {

@@ -16,9 +16,11 @@
 
 html, body{
     margin: 0;
+    padding: 0;
     font-family: $palanquin;
     user-select: none;
     background-color: $brand-black;
+    overflow: auto;
 }
 
 
@@ -1411,7 +1413,8 @@ main{
                     &::before{
                         @include progressCirclesOnCoursesParent();
                     }
-                } ul{
+                } 
+                ul{
                     max-width: 150px;
                     margin: 0;
                     .progress-steps{
@@ -1457,6 +1460,9 @@ main{
                         color: #fff;
                     }
                 }
+            }
+            .progress-wrap:last-of-type .parent-progress{
+                border-left-color: transparent;
             }
         }
         .theme-toggle{
@@ -1615,10 +1621,10 @@ main{
 .main-footer{
     width: 100%;
     background-color: $brand-gray;
-    padding: .5rem 0;
+    padding: 1rem 0;
     .inner-footer{
         width: 80%;
-        margin: 2rem auto;
+        margin: 1rem auto;
         .iva{
             float: right;
             text-transform: uppercase;
@@ -1644,6 +1650,8 @@ main{
 .fm-5{
     transform: translateY(2rem);
 }
+
+
 
 
 //================== COURSE COMPLETED ===== // 
@@ -2154,6 +2162,17 @@ main{
     z-index: 3;
     img{
         width: 90%;
+        margin: 0 auto;
+    }
+}
+
+.cloned-image-extra{
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    z-index: 300 !important;
+    img{
+        width: 400px;
         margin: 0 auto;
     }
 }

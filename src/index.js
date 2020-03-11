@@ -2,6 +2,7 @@ import Glide from '@glidejs/glide' //TO BE USED LATER
 import { Controls, Breakpoints } from '@glidejs/glide/dist/glide.modular.esm.js'
 import 'materialize-css/dist/js/materialize.min.js'
 import { TweenMax, Expo } from 'gsap'
+import AOS from 'aos'
 
 
 
@@ -163,6 +164,10 @@ digial.mount()
       continueCourses.style.pointerEvents = ''
     })
   })
+
+
+
+
   
   
   //========Add to List Listener / Change Icon on click
@@ -183,24 +188,17 @@ digial.mount()
             imgContainer.className = 'cloned-image'
             parentWrapper.appendChild(imgContainer)
       
-      
             sourceImage.src = bi;
       
 
       function cloneImg(){
         imgContainer.appendChild(sourceImage.cloneNode(true));
         TweenMax.to(imgContainer, 5, { top: '-1000%', opacity: 0, scale: -3 })
-
-        //Move to List
-      let imgRect = Math.floor(imgContainer.getBoundingClientRect().left) 
-    
-        
-        console.log(imgRect);
       }
       
       
-      
   
+      //Change Icon
       let icon = e.target
       if(icon.innerHTML == 'add'){
         icon.textContent = 'check'
@@ -222,6 +220,44 @@ digial.mount()
       
     })
   })
+
+  //Do the same for + La mia lista
+    DOM.querySelectorAll('.brief-container').forEach((BriefContainer) => {
+    const plusIcon = BriefContainer.querySelector('.add-to-list')
+
+      plusIcon.addEventListener('click', (e) => {
+        e.preventDefault()
+            //Get Bckground url
+         const img = BriefContainer.querySelector('.brief-bg'),
+                style = img.currentStyle || window.getComputedStyle(img, false),
+                bi = style.backgroundImage.slice(4, -1).replace(/['"]/g, "");
+   
+   
+        //Clone Image
+        const sourceImage = document.createElement('img'),
+          imgContainer = document.createElement('div'),
+          parentWrapper = img;
+         imgContainer.className = 'cloned-image-extra'
+         parentWrapper.appendChild(imgContainer)
+         sourceImage.src = bi;
+   
+
+        function cloneImg(){
+          imgContainer.appendChild(sourceImage.cloneNode(true));
+          TweenMax.to(imgContainer, 5, { top: '-1000%', scale: 2, x: '-190rem' })
+        }
+        cloneImg()
+
+        triggerNotify.classList.add('scale-notify')
+        setTimeout(() => { triggerNotify.classList.remove('scale-notify') }, 500)
+        
+      })
+  })
+
+
+
+   
+
   
 }
 
@@ -637,6 +673,19 @@ if (vManiCourse) {
       })
     
     })
+    //Last Child
+    DOM.querySelector('.progress-wrap:last-of-type .parent-progress').addEventListener('click', (e) => {
+      let lastType = e.target
+
+      if (lastType.classList.contains('pwpp')) {
+        e.target.style.borderLeftColor = ''
+        lastType.classList.remove('pwpp')
+      } else {
+      
+        e.target.style.borderLeftColor = '#1D1D1D'
+        lastType.classList.add('pwpp')
+      }
+    })
   }
 
 
@@ -922,21 +971,11 @@ for (let i = 0, len = nav.children.length; i < len; i++){
 }
 
 
-//Change Background Color for Body
+//Hide last parent Progress color
 
-if (DOM.querySelector('.dash-footer')) {
-    DOM.style.backgroundColor = '#1D1D1D';
-}
-window.onscroll = function(ev) {
 
-  if (DOM.querySelector('.dash-footer')) {
-    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
-      DOM.style.backgroundColor = '#2d2d2d';
-    } else {
-      DOM.style.backgroundColor = '#1D1D1D';
-    }
-  }
-}
+
+
 
 
 //Resize Listener
@@ -946,6 +985,23 @@ window.addEventListener('resize', () => {
   }
 })
 
+
+//AOS
+// if (DOM.querySelector('.v-in-course')) {
+  
+  
+
+
+
+//   const vQ = DOM.querySelectorAll('.v-questions')
+
+//   for (let i = 0; i < vQ.length; i++){
+//     vQ[i].setAttribute('data-aos', 'fade-up')
+//   }
+
+
+//   AOS.init()
+// }
 
 
 
